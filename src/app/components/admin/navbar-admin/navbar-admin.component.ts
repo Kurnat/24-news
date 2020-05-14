@@ -22,9 +22,11 @@ export class NavbarAdminComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      pageSize: new FormControl('5'),
-      category: new FormControl('general'),
-      country: new FormControl('ua')
+
+       pageSize: new FormControl('5'),
+       category: new FormControl('general'),
+       country: new FormControl('ua')
+
     });
   }
 
