@@ -1,21 +1,24 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-primary app-shadow">
+<nav class="navbar navbar-expand-sm navbar-light nav-fix app-shadow pt-0 pb-0">
+  <div class="container header__wrapp p-0">
     <!-- logo -->
-    <a class="navbar-brand" [routerLink]="['/']">Home</a>
+    <a class="navbar-brand navbar-light app-bg-red app-bg-red-1 pr-3" [routerLink]="['/']">24 News</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarMenu">
+    <div class="collapse navbar-collapse navbarMenu" id="navbarMenu">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item" routerLinkActive="active">
             <!-- News -->
-          <a  class="nav-link" routerLink="news">News</a>
+          <a  class="nav-link" routerLink="news">Новини</a>
         </li>
         <li class="nav-item" routerLinkActive="active">
             <!-- Login -->
-          <a class="nav-link" routerLink="profile">Profile</a>
+          <a class="nav-link" routerLink="profile">Профайл</a>
         </li>
       </ul>
     </div>
+  </div>
+
   </nav>
 
 

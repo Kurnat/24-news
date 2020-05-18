@@ -19,6 +19,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { NavbarAdminComponent } from './components/admin/navbar-admin/navbar-admin.component';
+import { TestingApiComponent } from './testing-api/testing-api.component';
 
 
 
@@ -32,6 +33,7 @@ import { NavbarAdminComponent } from './components/admin/navbar-admin/navbar-adm
     FooterComponent,
     LoginComponent,
     NavbarAdminComponent,
+    TestingApiComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { NavbarAdminComponent } from './components/admin/navbar-admin/navbar-adm
     BrowserAnimationsModule,
     SharedModule,
     NgxPaginationModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
