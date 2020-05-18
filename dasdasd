@@ -1,0 +1,83 @@
+[33mcommit 4e1704badacd6800000a442fb06acb40545abc5f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Kurnat <beda21@ukr.net>
+Date:   Mon May 18 21:54:09 2020 +0300
+
+    reconstruction
+
+[33mcommit 88b00495d8dd7ae9ee25286de198bc6fa6b48d5d[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Kurnat <beda21@ukr.net>
+Date:   Fri May 15 00:53:04 2020 +0300
+
+    first commit
+
+[33mcommit 3d233048f8ed79ca659f199cee7815873aaeeb7b[m
+Author: Kurnat <beda21@ukr.net>
+Date:   Wed Apr 1 11:52:25 2020 +0300
+
+    adding admin filter
+
+[33mcommit bdd09483fb8e230dd4c05e3e18882a2224153b9e[m
+Author: Kurnat <beda21@ukr.net>
+Date:   Mon Mar 30 20:09:46 2020 +0300
+
+    add new paragraf in home page
+
+[33mcommit 9e616be646243d8a93d0ecfa378aeb8cad8b4433[m
+Author: Kurnat <beda21@ukr.net>
+Date:   Mon Mar 30 19:27:33 2020 +0300
+
+    transferring logic from news component to todos service
+
+[33mcommit d5aa217b644adbcb9a8d516f8b9b8eb6d4773c0b[m
+Author: Kurnat Vasil <38785058+Kurnat@users.noreply.github.com>
+Date:   Mon Mar 23 07:58:09 2020 +0200
+
+    readme changing
+
+[33mcommit 3e340ac755f1a35ece54a4414fba594b5ca86d57[m
+Author: Kurnat Vasil <38785058+Kurnat@users.noreply.github.com>
+Date:   Mon Mar 23 07:56:09 2020 +0200
+
+    change desription
+
+[33mcommit 8a44b108aaf692f3c2f01ea0c64e065ba314be9a[m
+Author: Kurnat Vasil <38785058+Kurnat@users.noreply.github.com>
+Date:   Mon Mar 23 07:48:32 2020 +0200
+
+    Update README.md
+
+[33mcommit 0b03c353a0c9849f09143bf3a29e6b3f53403d8d[m
+Author: Kurnat Vasil <38785058+Kurnat@users.noreply.github.com>
+Date:   Mon Mar 23 07:39:42 2020 +0200
+
+    Update README.md
+
+[33mcommit dfa0fb48580146a315878697808634da1cc32050[m
+Author: Kurnat <beda21@ukr.net>
+Date:   Mon Mar 23 07:01:19 2020 +0200
+
+    remuve folder
+
+[33mcommit 13b06b70017a2b845c7a714df844b2ccbdcdeecc[m
+Author: Kurnat <beda21@ukr.net>
+Date:   Mon Mar 23 06:03:20 2020 +0200
+
+    first commit
+
+[33mcommit 781a145f50eca558373da5671ddc8e0cfcbbc6e5[m
+Author: Kurnat <beda21@ukr.net>
+Date:   Mon Mar 23 05:29:22 2020 +0200
+
+    add method  someMethod in footer
+
+[33mcommit a7e0746d4bc37df57d2e907fc9e6f6e91a280572[m
+Author: Kurnat <beda21@ukr.net>
+Date:   Sun Mar 22 15:16:23 2020 +0200
+
+    commit with application
+
+[33mcommit d11fe74b7bc879c111062e20343ddf063cd2af90[m
+Author: Kurnat <beda21@ukr.net>
+Date:   Thu Mar 19 20:35:50 2020 +0200
+
+    initial commit
