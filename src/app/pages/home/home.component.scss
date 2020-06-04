@@ -1,0 +1,63 @@
+$app_red: #d11831;
+$app_red_80: #d11831e3;
+$app_gold: #d1a618;
+$app_gold_80: #d1af1879;
+
+.pink {
+  background-color: $app_gold_80;
+  color: #fff;
+  transition: 0.2s;
+  cursor: pointer;
+  &:hover {
+    background-color: $app_gold;
+    box-shadow: 1px 2px 3px 0px #ccc;
+    transition: 0.2s;
+  }
+}
+.aside{
+  max-height: 500px;
+}
+.rem-08 {
+  font-size: 0.8rem;
+}
+
+.rem-06 {
+  font-size: 0.6rem;
+}
+
+.my-active {
+  color: $app_red;
+}
+
+.details_link {
+  line-height: 1rem;
+  &:link {
+    color: $app_gold;
+  }
+  &:active {
+    color: $app_gold;
+  }
+  &:visited {
+    color: $app_gold;
+  }
+  &:hover {
+    color: $app_gold_80;
+  }
+}
+
+
+
+//paginattion
+.pagination{
+  .page-link{
+    border: 1px solid $app_gold;
+    color: $app_gold;
+  }
+  .page-item.active{
+    a{
+      color: #fff;
+      background-color: $app_gold;
+    }
+  }
+}
+

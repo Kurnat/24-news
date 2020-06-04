@@ -1,9 +1,12 @@
-$app_red: #d11831;
+@import '../../shared/styles/variables';
 $nav_height: 50px;
+
+
 
 .header__wrapp {
   height: 100%;
   position: relative;
+
   &::before {
     content: "";
     display: block;
@@ -15,12 +18,17 @@ $nav_height: 50px;
   }
 }
 
+.category__wrapp{
+  position: relative;
+  z-index: 1;
+}
+
 .app-bg-red {
   background-color: $app_red;
   color: white;
   position: relative;
   height: 100%;
-
+  margin-right: 0;
   &-1::after {
     content: "";
     position: absolute;
@@ -33,7 +41,10 @@ $nav_height: 50px;
     border-color: $app_red transparent transparent;
   }
 }
-
+.header-nav {
+  height: $nav_height;
+  z-index: 58;
+}
 .nav-fix {
   position: fixed;
   left: 0;
@@ -42,7 +53,7 @@ $nav_height: 50px;
   width: 100%;
   background-color: #fff;
   height: $nav_height;
-  z-index: 6000;
+  z-index: 60;
 }
 
 // navbarMenu
@@ -51,51 +62,78 @@ $nav_height: 50px;
   ul {
     background-color: rgba(255, 255, 255, 0.459);
   }
-  li {
-    // border-bottom: 1px solid $app_red;
-    a {
-      color: $app_red;
-      margin-right: 0.5rem;
-      position: relative;
-      text-align: center;
-      &::after {
-        content: "";
-        position: absolute;
-        width: 0%;
-        bottom: 0;
-        left: 50%;
-        height: 1px;
-        background-color: $app_red;
-        transition: 0.3s;
-      }
+}
 
-      &:hover::after {
-        left: 0;
-        width: 100%;
-      }
-    }
+.underline {
+  cursor: pointer;
+  list-style: none;
+  color: $app_red;
+  margin-right: 0.5rem;
+  position: relative;
+  text-align: center;
+  z-index: 59;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    bottom: 0;
+    left: 50%;
+    height: 1px;
+    background-color: $app_red;
+    transition: 0.3s;
+  }
+
+  &:hover::after {
+    left: 0;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 576px) {
   #navbarMenu ul {
-    background-color: rgba(204, 204, 204, 0.507);
+    background-color: $app_red-80;
 
-      .nav-link {
-        color: #fff;
-        &::after{
-          background-color: #fff;
-        }
-
+    .nav-link {
+      color: #fff;
+      &::after {
+        background-color: #fff;
       }
+    }
   }
 }
 
-.navbar-brand{
-  &:hover,&:active,&:visited,&:link{
+.navbar-brand {
+  // i {
+  //   transition: 0.5s;
+  // }
+  transition: 0.5s;
+  width: 150px;
+  &:active,
+  &:visited,
+  &:link {
     color: #fff;
-
   }
+  &:hover {
+    transition: 0.5s;
+    width: 200px;
+  }
+  // &:hover i {
+  //   transition: 0.5s;
+  //   transform: rotate(5deg);
+  // }
 }
 
-
+.app-link{
+  transition: 0.5s;
+  width: 150px;
+  &:active,
+  &:visited,
+  &:link {
+    color: #000;
+    text-decoration: none;
+  }
+  &:hover {
+    transition: 0.5s;
+    width: 200px;
+  }
+}

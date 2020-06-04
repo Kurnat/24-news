@@ -1,0 +1,28 @@
+
+<h1 class="h3">Новини</h1>
+  <div class="d-flex border-top pt-2"
+  *ngFor="let article of articles; let idx = index">
+    <p class="mr-2 text-secondary">{{article.publishedAt | date:'hh:mm'}}</p>
+    <p class="font-weight-bolder">
+      <a class="a-link"
+        [routerLink]="[ '/news-page', article.id ]"
+        >{{article.description | titlecase}} <br> <span class="text-black-50 rem-08">Оновленно</span>
+      </a>
+    </p>
+  </div>
+  <div class="d-flex border-top pt-2">
+    <p class="mr-2 text-secondary">04:52</p>
+    <p class="font-weight-bolder">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, deserunt? <span class="text-black-50 rem-08">Оновленно</span></p>
+  </div>
+  <div class="d-flex border-top pt-2">
+    <p class="mr-2 text-secondary">04:52</p>
+    <p class="font-weight-bolder">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, deserunt? <span class="text-black-50 rem-08">Оновленно</span></p>
+  </div>
+  <div class="d-flex border-top pt-2">
+    <p class="mr-2 text-secondary">04:52</p>
+    <p class="font-weight-bolder">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, deserunt? <span class="text-black-50 rem-08">Оновленно</span></p>
+  </div>
+  <div class="d-flex border-top pt-2">
+    <p class="mr-2 text-secondary">04:52</p>
+    <p class="font-weight-bolder">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, deserunt? <span class="text-black-50 rem-08">Оновленно</span></p>
+  </div>
