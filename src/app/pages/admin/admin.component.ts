@@ -14,7 +14,9 @@ export class AdminComponent implements OnInit {
   }
 
 
-  addCategory(event) {
+  addCategory(event): void {
     console.log(event);
   }
+
+
 }

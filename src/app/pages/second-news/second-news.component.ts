@@ -1,3 +1,4 @@
+import { DbService } from 'app/shared/services/db.service';
 import { Article } from './../../shared/interfaces/article.interface';
 import { Component, OnInit } from '@angular/core';
 import { NewsSecondService } from 'app/shared/services/news-second.service';
@@ -10,14 +11,15 @@ import { NewsSecondService } from 'app/shared/services/news-second.service';
 export class SecondNewsComponent implements OnInit {
 
   articles: Article[];
-  constructor(private newsSecondService: NewsSecondService) {}
+  constructor(private newsSecondService: NewsSecondService,
+              private db: DbService) {}
 
   ngOnInit(): void {
     this.getSecondNews();
   }
 
   getSecondNews() {
-    this.newsSecondService.getData().subscribe((data: Article[]) => {
+    this.db.getAdditionalData().subscribe((data: Article[]) => {
       this.articles = data;
     });
   }

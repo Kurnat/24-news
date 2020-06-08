@@ -1,3 +1,10 @@
+<!-- Inputs -->
+<div class="form-group d-flex">
+  <input type="text" class="form-control mr-3" id="exampleInputEmail1" placeholder="Пошук...">
+  <button type="button" class="btn btn-success ml-auto text-nowrap" (click)="createNewCategory(template); lgModal.show()">Додати новину</button>
+</div>
+
+<!-- table -->
 <table class="table table-hover text-center table-responsive-md">
   <caption>Всі новини</caption>
   <thead>
@@ -6,23 +13,20 @@
       <th scope="col">Заголовок</th>
       <th scope="col">Категорія</th>
       <th scope="col">Автор</th>
-      <th scope="col">Тип</th>
       <th scope="col">Дата</th>
       <th scope="col">Дія</th>
     </tr>
   </thead>
   <tbody>
-    <tr class="overflow-auto" *ngFor="let article of news | newsSortByDate; let idx = index">
+    <tr class="overflow-auto" *ngFor="let article of articles;let idx = index">
       <th scope="row">{{idx + 1}}</th>
       <td>{{article.title}}</td>
       <td>{{article.category}}</td>
       <td>{{article.author}}</td>
-      <td>{{article.typeNews}}</td>
-      <td>{{article.publishedAt | date:'dd/MM/yyyy'}} <br>
-          {{article.publishedAt | date:'hh:mm:ss'}}</td>
+      <td>{{article.publishedAt | date:'dd/MM/yyyy'}}</td>
       <td>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-warning" (click)="openEditArticle(template, article)">Редаг.</button>
+          <button type="button" class="btn btn-warning" (click)="openEditArticle(template, article); lgModal.show()">Редаг.</button>
           <button type="button" class="btn btn-danger" (click)="deleteArticle(article.id)">Видал.</button>
         </div>
       </td>
@@ -31,9 +35,30 @@
 </table>
 
 
+
+
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1"
+     role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-sizes-name1" class="modal-title pull-left">Large modal</h4>
+        <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <app-add-news *ngIf="!editModal"></app-add-news>
+       <app-edit-news
+          *ngIf="editModal"
+          [events]="eventsSubject.asObservable()"></app-edit-news>
+      </div>
+    </div>
+  </div>
+</div>
 <ng-template #template>
 
-  <div class="modal-header ">
+  <!-- <div class="modal-header ">
     <h4 class="modal-title pull-left">Modal</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
@@ -69,30 +94,6 @@
       </div>
 
       <div class="form-row">
-        <div class="form-group pl-2 pr-2">
-          <p class="m-0">Тип новин</p>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio"
-                id="general"
-                value="general"
-                name="typeNews"
-                class="custom-control-input"
-                formControlName="typeNews">
-            <label class="custom-control-label" for="general">Основні новини</label>
-          </div>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio"
-                id="additional"
-                name="typeNews"
-                class="custom-control-input"
-                value="additional"
-                formControlName="typeNews">
-            <label class="custom-control-label" for="additional">Додаткові новини</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-row">
         <div class="form-group col-md-6">
           <label for="url">URL</label>
           <input type="text" class="form-control" formControlName="url" name="url" id="url"
@@ -106,15 +107,6 @@
       </div>
 
       <div class="form-group mb-3">
-        <label for="description">Опис</label>
-        <textarea class="form-control is-invalid" formControlName="description" id="description"
-          placeholder="Короткий опис статті..." required></textarea>
-        <div class="invalid-feedback">
-          Поле статті обов'язкове
-        </div>
-      </div>
-
-      <div class="form-group mb-3">
         <label for="content">Контент</label>
         <textarea class="form-control is-valid" formControlName="content" id="content" placeholder="Написати контент..."
           required></textarea>
@@ -123,10 +115,27 @@
         </div>
       </div>
 
+      <div class="form-group mb-3">
+        <label for="description">Опис</label>
+        <textarea class="form-control is-invalid" formControlName="description" id="description"
+          placeholder="Короткий опис статті..." required></textarea>
+        <div class="invalid-feedback">
+          Поле статті обов'язкове
+        </div>
+      </div>
 
-
-      <!-- <button type="submit" class="btn btn-success" (click)="addArticleToServer()">Додати новину</button> -->
-      <button type="submit" class="btn btn-warning" (click)="editArticleInServer(); modalRef.hide()">Оновити статтю</button>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Check me out
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" (click)="addArticleToServer()">Додати новину</button>
+      <button type="submit" class="btn btn-warning" (click)="editArticleInServer()">Оновити статтю</button>
     </form>
-  </div>
+  </div> -->
 </ng-template>
+
+

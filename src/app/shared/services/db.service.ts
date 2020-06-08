@@ -8,10 +8,20 @@ import { Article } from '../interfaces/article.interface';
 })
 export class DbService {
   url = 'http://localhost:3000/news';
+  urlGeneral = 'http://localhost:3000/news?typeNews=general';
+  urlAdditional = 'http://localhost:3000/news?typeNews=additional';
   constructor(private http: HttpClient) { }
 
   getData(): Observable<Article[]> {
     return this.http.get<Article[]>(`${this.url}`);
+  }
+
+  getGeneralData(): Observable<Article[]> {
+    return this.http.get<Article[]>(`${this.urlGeneral}`);
+  }
+
+  getAdditionalData(): Observable<Article[]> {
+    return this.http.get<Article[]>(`${this.urlAdditional}`);
   }
 
   getById(id): Observable<Article> {

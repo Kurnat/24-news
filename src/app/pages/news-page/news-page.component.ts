@@ -21,7 +21,6 @@ export class NewsPageComponent implements OnInit {
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     this.db.getById(id).subscribe(data => {
-      console.log(data);
       if (data) {
         this.article = data;
         this.checker = true;

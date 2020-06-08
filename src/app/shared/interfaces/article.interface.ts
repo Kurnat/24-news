@@ -10,6 +10,7 @@ export interface Article {
     content: string;
     category?: string;
     id?: string;
+    typeNews?: string;
 }
 
 export interface News {

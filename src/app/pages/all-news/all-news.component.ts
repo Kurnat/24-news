@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Category } from './../../shared/interfaces/category.interface';
 import { CategoryService } from './../../shared/services/category.service';
 import { DbService } from 'app/shared/services/db.service';
@@ -20,7 +21,6 @@ export class AllNewsComponent implements OnInit {
   chekerAddOrEdit = true;
   categoris: Category[];
   constructor(
-    private cloudService: CloudService,
     private modalService: BsModalService,
     private categoryService: CategoryService,
     private db: DbService
@@ -62,6 +62,7 @@ export class AllNewsComponent implements OnInit {
       url: new FormControl(article.url),
       content: new FormControl(article.content),
       description: new FormControl(article.description),
+      typeNews: new FormControl(article.typeNews)
     });
 
     this.modalRef = this.modalService.show(template);
@@ -84,6 +85,7 @@ export class AllNewsComponent implements OnInit {
       data.id = this.artileId;
       this.db.updateData(data).subscribe(() => {
         this.getData();
+
       });
       this.artileId = null;
     }

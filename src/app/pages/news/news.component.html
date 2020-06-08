@@ -1,6 +1,6 @@
 <div class="container">
   <div *ngIf="news.length">
-    <div class="" *ngFor="let article of news">
+    <div class="" *ngFor="let article of news | newsSortByDate">
       <div class="img__wrapp mb-4">
         <div class="news border mb-4">
           <a [routerLink]="['/news-page', article.id]">

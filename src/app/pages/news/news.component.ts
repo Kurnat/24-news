@@ -1,4 +1,4 @@
-import { Article } from './../../shared/interfaces/article.interface';
+import { Article } from 'app/shared/interfaces/article.interface';
 import { DbService } from 'app/shared/services/db.service';
 
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
@@ -37,8 +37,10 @@ export class NewsComponent implements OnInit, OnDestroy {
     //   });
     // });
 
-    this.db.getData().subscribe(articles => {
+    this.db.getGeneralData().subscribe(articles => {
+
       this.news = articles;
+
     });
   }
 

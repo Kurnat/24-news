@@ -1,3 +1,4 @@
+import { CommunicationService } from './../../shared/services/communication.service';
 import { Category } from './../../shared/interfaces/category.interface';
 import { CategoryService } from './../../shared/services/category.service';
 
@@ -13,14 +14,23 @@ export class HeaderComponent implements OnInit {
   categorysArray: Category[] = [];
 
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService,
+              private communicationService: CommunicationService) {
+                communicationService.changeEmitted$.subscribe(() => {
+                  this.getAllCategorys();
+                });
+               }
 
   ngOnInit(): void {
+    this.getAllCategorys();
+  }
+  getAllCategorys(): void {
     this.categoryService.getAllCategorys().subscribe(
       data => {
         this.categorysArray = data;
       }
     );
   }
+
 
 }

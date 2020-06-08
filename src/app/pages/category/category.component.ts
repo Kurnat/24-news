@@ -12,7 +12,7 @@ import { Article } from 'app/shared/interfaces/article.interface';
 export class CategoryComponent implements OnInit {
 
   news: Article[] = [];
-
+  checkLoader: boolean;
 
   constructor(
               private activatedRoute: ActivatedRoute,
@@ -27,6 +27,7 @@ export class CategoryComponent implements OnInit {
         console.log(categoryName);
         this.dbService.getDataByCategoty(categoryName).subscribe(data => {
           console.log(data);
+          this.checkLoader = false;
           this.news = data;
         });
       }
@@ -34,6 +35,7 @@ export class CategoryComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.checkLoader = true;
   }
 
 }

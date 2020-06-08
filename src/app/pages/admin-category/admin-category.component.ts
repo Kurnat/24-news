@@ -1,3 +1,4 @@
+import { CommunicationService } from './../../shared/services/communication.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { FormGroup, FormControl } from '@angular/forms';
 import { CategoryService } from './../../shared/services/category.service';
@@ -10,7 +11,6 @@ import { Category } from 'app/shared/interfaces/category.interface';
   styleUrls: ['./admin-category.component.scss'],
 })
 export class AdminCategoryComponent implements OnInit {
-  @Output() addCategory: EventEmitter<Category> = new EventEmitter();
 
   categorys: Category[];
   modalRef: BsModalRef;
@@ -18,11 +18,12 @@ export class AdminCategoryComponent implements OnInit {
   id;
   template: TemplateRef<any>;
   checkModalAdd: boolean;
-
+  searsh = '';
 
   constructor(
     private categoryService: CategoryService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private communicationService: CommunicationService
   ) {}
 
   ngOnInit(): void {
@@ -49,6 +50,7 @@ export class AdminCategoryComponent implements OnInit {
 
   deletecategory(id: string): void {
     this.categoryService.deleteData(id).subscribe(() => {
+    this.communicationService.emitChange();
     this.getCategoris();
     });
   }
@@ -63,7 +65,7 @@ export class AdminCategoryComponent implements OnInit {
 
     this.categoryService.updateData(categoryData).subscribe(() => {
       this.getCategoris();
-      this.addCategory.emit(categoryData);
+      this.communicationService.emitChange();
     });
 
     this.modalRef.hide();
@@ -84,6 +86,7 @@ export class AdminCategoryComponent implements OnInit {
     const newCategory = this.form.value;
     this.categoryService.setData(newCategory).subscribe(() => {
     this.getCategoris();
+    this.communicationService.emitChange();
     });
   }
 }

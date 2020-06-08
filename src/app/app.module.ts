@@ -33,6 +33,11 @@ import { ModalAddEditComponent } from './components/admin/modal-add-edit/modal-a
 import { CategoryComponent } from './pages/category/category.component';
 import { AdminCategoryComponent } from './pages/admin-category/admin-category.component';
 import { SecondNewsComponent } from './pages/second-news/second-news.component';
+import { AdditionalNewsComponent } from './pages/additional-news/additional-news.component';
+import { AdditionalComponent } from './pages/additional/additional.component';
+import { EditNewsComponent } from './pages/edit-news/edit-news.component';
+import { NewsDatePipe } from './shared/pipes/news-date.pipe';
+import { NewsSearchPipe } from './shared/pipes/news-search.pipe';
 
 
 
@@ -55,6 +60,11 @@ import { SecondNewsComponent } from './pages/second-news/second-news.component';
     CategoryComponent,
     AdminCategoryComponent,
     SecondNewsComponent,
+    AdditionalNewsComponent,
+    AdditionalComponent,
+    EditNewsComponent,
+    NewsDatePipe,
+    NewsSearchPipe,
   ],
   imports: [
     BrowserModule,

@@ -32,9 +32,9 @@ export class HomeComponent implements OnInit {
 
   news$: Observable<News>;
   // news page
-  p = 1;
+  // p = 1;
   // Array with news article
-  collection: Article[] = [];
+  // collection: Article[] = [];
   isAdmin: boolean | null = false;
 
 
@@ -52,11 +52,11 @@ export class HomeComponent implements OnInit {
     //   data => console.log(data)
     // );
 
-    this.db.getData().subscribe(data => {
-      this.collection = data;
-      console.log(data);
+    // this.db.getData().subscribe(data => {
+    //   this.collection = data;
+    //   console.log(data);
 
-    });
+    // });
   }
 
 }

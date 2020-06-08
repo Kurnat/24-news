@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class NewsSecondService {
 
-  url = 'http://localhost:3000/news-second';
+  url = 'http://localhost:3000/news?typeNews=additional';
   constructor(private http: HttpClient) { }
 
   getData(): Observable<Article[]> {

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CategoryService } from './../../shared/services/category.service';
 import { Observable } from 'rxjs';
 import { DbService } from 'app/shared/services/db.service';
@@ -22,7 +23,8 @@ export class AddNewsComponent implements OnInit {
 
   productImage = '';
 
-  constructor(private cloudService: CloudService,
+  constructor(
+              private router: Router,
               private db: DbService,
               private categoryService: CategoryService,
               private afStorage: AngularFireStorage) { }
@@ -38,14 +40,15 @@ export class AddNewsComponent implements OnInit {
 
   initFormGroup(): void {
     this.form = new FormGroup({
-      author: new FormControl(''),
-      name: new FormControl(''),
+      author: new FormControl('Алла Мазур'),
+      name: new FormControl('24 News'),
       title: new FormControl(''),
       category: new FormControl('business'),
       urlToImage: new FormControl(''),
-      url: new FormControl(''),
+      url: new FormControl('http://localhost:4200'),
       content: new FormControl(''),
       description: new FormControl(''),
+      typeNews: new FormControl('general')
     });
   }
 
@@ -56,7 +59,7 @@ export class AddNewsComponent implements OnInit {
     };
 
     // adding data to server
-    this.db.setData(data).subscribe();
+    this.db.setData(data).subscribe(() => this.router.navigate(['/']));
   }
 
   uploadFile(event) {

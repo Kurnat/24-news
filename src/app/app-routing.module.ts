@@ -1,3 +1,4 @@
+import { AdditionalNewsComponent } from './pages/additional-news/additional-news.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { AllNewsComponent } from './pages/all-news/all-news.component';
 import { AddNewsComponent } from './pages/add-news/add-news.component';
@@ -11,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { NewsPageComponent } from './pages/news-page/news-page.component';
 import { AdminCategoryComponent } from './pages/admin-category/admin-category.component';
+import { AdditionalComponent } from './pages/additional/additional.component';
 
 
 
@@ -19,10 +21,12 @@ const routes: Routes = [
   { path: 'category/:category', component: CategoryComponent },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'news-page/:id', component: NewsPageComponent, pathMatch: 'full' },
+  { path: 'additional/:id', component: AdditionalComponent, pathMatch: 'full'},
   { path: 'admin', component: AdminComponent, children: [
     {path: 'add-news', component: AddNewsComponent},
     {path: 'all-news', component: AllNewsComponent},
-    {path: 'category', component: AdminCategoryComponent}
+    {path: 'category', component: AdminCategoryComponent},
+    {path: 'additional-news', component: AdditionalNewsComponent}
   ]},
   { path: 'profile', loadChildren: () => import('./pages/profile/profile/profile.module').then(m => m.ProfileModule)},
   { path: '**', component: PageNotFoundComponent},

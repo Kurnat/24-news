@@ -1,5 +1,5 @@
 <div class="form-group d-flex">
-  <input type="text" class="form-control mr-3" id="exampleInputEmail1" placeholder="Пошук...">
+  <input type="text" class="form-control mr-3" id="exampleInputEmail1" placeholder="Пошук..." [(ngModel)]="searsh">
   <button type="button" class="btn btn-success ml-auto text-nowrap" (click)="createNewCategory(template)">Додати категорію</button>
 </div>
 
@@ -16,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="overflow-auto" *ngFor="let category of categorys;let idx = index">
+    <tr class="overflow-auto" *ngFor="let category of categorys | newsSearch:searsh;let idx = index">
       <th scope="row">{{idx + 1}}</th>
       <td>{{category.nameUA | titlecase}}</td>
       <td>{{category.nameEN | titlecase}}</td>
