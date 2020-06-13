@@ -2,7 +2,7 @@
 <h1 class="h3">Новини</h1>
   <div class="d-flex border-top pt-2"
   *ngFor="let article of articles | newsSortByDate; let idx = index">
-    <p class="mr-2 text-secondary">{{article.publishedAt | date:'hh:mm'}}</p>
+    <p class="mr-2 text-secondary">{{article.publishedAt | date:'HH:mm'}}</p>
     <p class="font-weight-bolder">
       <a class="a-link"
         [routerLink]="[ '/additional', article.id ]"

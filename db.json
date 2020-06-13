@@ -116,6 +116,58 @@
       "description": "",
       "typeNews": "additional",
       "id": 8
+    },
+    {
+      "publishedAt": "Sat Jun 13 2020 18:44:36 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "Головна новина",
+      "category": "business",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2F4b949356-4a71-4b00-8de8-e7ac905c55f1.jpeg?alt=media&token=0bf88b3f-20fb-47d0-8255-cb0531a449a6",
+      "url": "http://localhost:4200",
+      "content": "4444444444444444444444444444",
+      "description": "333333333333333333333",
+      "typeNews": "general",
+      "id": 10
+    },
+    {
+      "publishedAt": "Sat Jun 13 2020 18:49:40 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "Angular 9",
+      "category": "general",
+      "urlToImage": "",
+      "url": "http://localhost:4200",
+      "content": "",
+      "description": "",
+      "typeNews": "general",
+      "id": 11
+    },
+    {
+      "publishedAt": "Sat Jun 13 2020 18:50:25 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "Головна новина!!!!!!!!",
+      "category": "general",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2Fe60c7c0f-962d-4325-973b-d9a4a0117e84.jpeg?alt=media&token=fa4f63c3-3fba-430c-a04a-f148ab56f115",
+      "url": "http://localhost:4200",
+      "content": "1111111111111111111",
+      "description": "22222222222222222222222",
+      "typeNews": "general",
+      "id": 12
+    },
+    {
+      "publishedAt": "Sat Jun 13 2020 18:51:37 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "Розваги",
+      "category": "entertainment",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2F329aef05-7386-4bca-b623-fd913a14be96.jpeg?alt=media&token=2e5a7afc-045c-4b67-bcab-46d84c82b8b5",
+      "url": "http://localhost:4200",
+      "content": "6666666666666666",
+      "description": "66666666666666",
+      "typeNews": "additional",
+      "id": 13
     }
   ],
   "category": [
@@ -167,6 +219,13 @@
       "bgColor": "transparent",
       "nameUA": "технології",
       "nameEN": "technology"
+    },
+    {
+      "nameUA": "Halk",
+      "nameEN": "halk",
+      "color": "#0c5a0f",
+      "bgColor": "#61dbb7",
+      "id": 8
     }
   ],
   "news-second": [

@@ -77,7 +77,7 @@ export class AdminCategoryComponent implements OnInit {
     this.form = new FormGroup({
       nameUA: new FormControl(''),
       nameEN: new FormControl(''),
-      color: new FormControl(''),
+      color: new FormControl('#000000'),
       bgColor: new FormControl('')
     });
   }

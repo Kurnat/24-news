@@ -33,8 +33,6 @@ export class AddNewsComponent implements OnInit {
     this.initFormGroup();
     this.categoryService.getAllCategorys().subscribe((data: Category[]) => {
       this.categoris = data;
-      console.log(data);
-
     });
   }
 
@@ -57,6 +55,8 @@ export class AddNewsComponent implements OnInit {
       publishedAt: new Date().toString(),
       ...this.form.value
     };
+
+
 
     // adding data to server
     this.db.setData(data).subscribe(() => this.router.navigate(['/']));
