@@ -1,0 +1,83 @@
+<div class="form-group d-flex">
+  <input type="text" class="form-control mr-3" id="exampleInputEmail1" placeholder="Пошук..." [(ngModel)]="searsh">
+  <button type="button" class="btn btn-success ml-auto text-nowrap" (click)="createNewCategory(template)">Додати категорію</button>
+</div>
+
+<table class="table table-hover text-center table-responsive-md">
+  <caption>Всі категорії</caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Назва UA</th>
+      <th scope="col">Назва EN</th>
+      <th scope="col">Колір</th>
+      <th scope="col">Фон</th>
+      <th scope="col">Дія</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="overflow-auto" *ngFor="let category of categorys | newsSearch:searsh;let idx = index">
+      <th scope="row">{{idx + 1}}</th>
+      <td>{{category.nameUA | titlecase}}</td>
+      <td>{{category.nameEN | titlecase}}</td>
+      <td><span class="color"
+        [ngStyle]="{'background-color': category.color}"></span> {{category.color}}</td>
+      <td><span class="color"
+        [ngStyle]="{'background-color': category.bgColor}"></span> {{category.bgColor}}</td>
+      <td>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-warning" (click)="openEditCategory(template, category)">Редаг.</button>
+          <button type="button" class="btn btn-danger" (click)="deletecategory(category.id)">Видал.</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<ng-template #template>
+
+  <div class="modal-header ">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nameUA">Назва категорії Українською</label>
+          <input type="text" class="form-control" formControlName="nameUA"  id="nameUA" placeholder="Бізнес...">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="nameEN">Назва категорії Англійською</label>
+          <input type="text" class="form-control" formControlName="nameEN" id="nameEN" placeholder="Bisness...">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="color">Колір літер</label>
+          <input type="color" name="color" class="form-control" formControlName="color" id="color"
+            placeholder="Заголовок статті...">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="bgColor">Колір фону</label>
+          <input type="color" name="bgColor" class="form-control" formControlName="bgColor" id="bgColor"
+            placeholder="Заголовок статті...">
+        </div>
+      </div>
+
+      <div>
+      <button type="submit" class="btn btn-success ml-auto"
+      *ngIf="checkModalAdd"
+      (click)="addArticleToServer()">Додати новину</button>
+
+      <button type="submit" class="btn btn-warning ml-auto"
+        *ngIf="!checkModalAdd"
+        (click)="editArticleInServer()">Оновити Категорію</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

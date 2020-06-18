@@ -1,0 +1,12 @@
+
+.a-link{
+  &:link,
+  &:visited,
+  &:active{
+    text-decoration: none;
+    color: black;
+  }
+  &:hover{
+    color: #d11831;
+  }
+}

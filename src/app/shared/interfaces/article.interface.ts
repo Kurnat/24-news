@@ -1,5 +1,6 @@
 export interface Article {
-    source: object;
+    source?: object;
+    name?: string;
     author: string;
     title: string;
     description: string;
@@ -7,6 +8,9 @@ export interface Article {
     urlToImage: string;
     publishedAt: string;
     content: string;
+    category?: string;
+    id?: string;
+    typeNews?: string;
 }
 
 export interface News {

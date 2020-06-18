@@ -1,4 +1,9 @@
+$app_red: #d11831;
+$app_red_80: #d11831e3;
 .app-shadow-top{
     box-shadow: 0 -6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     height: 100%;
+}
+.nav-bg{
+  background-color: $app_red;
 }

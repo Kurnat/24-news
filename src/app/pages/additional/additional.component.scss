@@ -1,0 +1,110 @@
+$app_red: #d11831;
+$app_red_80: #d11831e3;
+$app_gold: #d1a618;
+$app_gold_80: #d1af1879;
+
+.news {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+a {
+  text-decoration: none;
+  &:link {
+    color: #000;
+  }
+  &:visited {
+    color: #000;
+  }
+}
+
+.img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  &__wrapp {
+    // cursor: pointer;
+
+    &:hover {
+      .img__title {
+        color: $app_red;
+      }
+      .published {
+        transition: 0.3s;
+        background-color: rgba(0, 0, 0, 0.342);
+      }
+    }
+  }
+  &__time-wrapp {
+    width: 4rem;
+    margin-top: 1rem;
+    margin-left: 1.6rem;
+  }
+  &--date {
+    background-color: $app_red;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.8rem;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+  }
+  &--time {
+    background-color: $app_red_80;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.published {
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: background-color 0.3s;
+}
+
+
+.category{
+  color: #fff;
+  border-radius: 3px;
+}
+
+.sports{
+  background-color: #06a865;
+}
+.general{
+  background-color: rgb(73, 73, 73);
+}
+
+.business{
+  background-color: #7c0404;
+}
+
+.entertainment{
+  background-color: #d1ce18;
+}
+
+.health{
+  background-color: #18d19a;
+}
+
+.science{
+  background-color: #ffbf35;
+}
+
+.technology{
+  background-color: #1e1f4d;
+}
+
+

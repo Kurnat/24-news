@@ -1,5 +1,28 @@
 {
   "projects": {
     "default": "test-authorization-77ffb"
+  },
+  "targets": {
+    "auth-task-d4f75": {
+      "hosting": {
+        "wwwest-solutions": [
+          "auth-task-d4f75"
+        ]
+      }
+    },
+    "news-site-b723e": {
+      "hosting": {
+        "wwwest-solutions": [
+          "news-site-b723e"
+        ]
+      }
+    },
+    "news-58993": {
+      "hosting": {
+        "wwwest-solutions": [
+          "news-58993"
+        ]
+      }
+    }
   }
 }

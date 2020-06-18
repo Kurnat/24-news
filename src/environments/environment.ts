@@ -4,15 +4,15 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: 'AIzaSyAvI-w9SRWUREsIOU45n9LPVCfpLTdMAqY',
-    authDomain: 'auth-task-d4f75.firebaseapp.com',
-    databaseURL: 'https://auth-task-d4f75.firebaseio.com',
-    projectId: 'auth-task-d4f75',
-    storageBucket: 'auth-task-d4f75.appspot.com',
-    messagingSenderId: '3348067675',
-    appId: '1:3348067675:web:03eb8a2a34d1501687167e',
-    measurementId: 'G-7KMD1LVJ1S'
+
+   firebase: {
+    apiKey: 'AIzaSyC1tswG0uzUrykcrjgkb5oike34F1T6jLA',
+    authDomain: 'news-58993.firebaseapp.com',
+    databaseURL: 'https://news-58993.firebaseio.com',
+    projectId: 'news-58993',
+    storageBucket: 'news-58993.appspot.com',
+    messagingSenderId: '107111868480',
+    appId: '1:107111868480:web:ebb92dc2d063728a7f17a5'
   }
 };
 

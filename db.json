@@ -1,0 +1,269 @@
+{
+  "news": [
+    {
+      "publishedAt": "Mon Jun 08 2020 19:09:20 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "Які області не готові послабити карантин: список",
+      "category": "health",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2Fd8058e62-d1ee-4a70-8d53-b859e97bf06a.jpeg?alt=media&token=55822c5e-c4d8-46e5-8fc4-9e400374950c",
+      "url": "http://localhost:4200",
+      "content": "Критерії для послаблення карантину\nОднією з ознак адаптивного карантину, який запровадили в Україні, є інцидентність. Тобто кількість нових хворих за останні 7 днів на 100 тисяч населення. Цей показник встановлений на рівні 12. На сайті МОЗ оприлюднили перелік областей, які не можуть послабити карантин.\n\n\n\nЗверніть увагу\n\nВ Україні знову послабили карантин: перші авіарейси та можна сидіти всередині кафе\nУ Міністерстві охорони здоров'я загалом виділили три умови, за дотримання яких може відбуватися послаблення карантину:\n\nщодо захворюваності (інцидентність);\nзаповненості ліжок в лікарнях;\nкількості тестувань.\nЯкі області не готові до послаблення карантину\nСтаном на 8 червня не готові перейти до наступного етапу послаблення карантину такі регіони:\n\nКиїв (зауважмо, що в області карантин можуть послабити);\nЛьвівська область;\nРівненська область;\nЧернівецька область;\nЖитомирська оласть;\nЗакарпатська область;\nЧернігівська область.\nУ всіх 7 регіонах для послаблення карантину не відповідає необхідній нормі показник інцидентності. Натомість показники завантаженості ліжок в лікарнях і кількості тестувань тут, як і в решті областей, відповідають вимогам МОЗ. \n\nЩо таке показник інцидентності?Однією з ознак адаптивного карантину, який запровадили в Україні, є інцидентність. Тобто кількість нових хворих за останні 7 днів на 100 тисяч населення. Цей показник встановлений на рівні 12.\n\nСтаном на 8 червня кількість випадків коронавірусу у зазначених областях:\n\nЧернівецька область – 3 698.\nКиїв – 3 490.\nРівненська область – 2 071.\nЛьвівська область – 2 162. \nЗакарпатська область 1 386.\nЖитомирська оласть – 897.\nЧернігівська область – 299. \n\n\nАктуально \n\nМожна знову пересуватися літаками: як робити це безпечно\nКарантин в Україні: головне\nСтаном на 8 червня в Україні підтвердили 27 462 випадки захворювання COVID-19, з них 797 людей померли, ще 12 195 хворих одужали.\nКарантин в Україні триватиме щонайменше до 22 червня. Раніше уряд опублікував відповідну постанову, яка передбачає п'ять етапів виходу з карантину.\nНові послаблення дозволили з 5 червня.\n\n",
+      "description": "Значні послаблення карантину розпочалися від 5 червня. Заклади харчування приймають відвідувачів всередині, а авіакомпанії здійснюють перші рейси. Однак не всі регіони до цього готові. Наразі Київ та ще шість областей не можуть зняти карантинні обмеження.\nhttps://24tv.ua/yaki-oblasti-ne-gotovi-do-poslablennya-karantinu-statistika-moz_n1348860",
+      "typeNews": "general",
+      "id": 1
+    },
+    {
+      "publishedAt": "Mon Jun 08 2020 19:37:19 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "asassa",
+      "category": "business",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2F5eae5339-aaca-4e84-80cd-ce0a6e63cf4d.png?alt=media&token=2fb10f39-5bdb-4e84-8f7b-b2e17cdd09c4",
+      "url": "http://localhost:4200",
+      "content": "asassa",
+      "description": "aasas",
+      "typeNews": "general",
+      "id": 9
+    },
+    {
+      "publishedAt": "Mon Jun 08 2020 18:03:39 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "SPACEX ЗАПУСТИЛА FALCON HEAVY ІЗ СУПУТНИКАМИ ТА ПРАХОМ 152 ЛЮДЕЙ",
+      "category": "technology",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2F92d398ed-dea5-461b-bc01-29394cfdf356.jpeg?alt=media&token=b5ae35eb-7f0b-4c82-ae20-8ef3a6ea449d",
+      "url": "http://localhost:4200",
+      "content": "Це відбулося у вівторок із пускового майданчика 39А космодрому на мисі Канаверал (штат Флорида). Про таке повідомляє Meduza.\n\nВідпрацьовані бічні прискорювачі планують посадити на два майданчики бази ВПС на мисі Канаверал, а першу ступінь носія — на плавучу платформу в Атлантичному океані.\n\nЗа інформацією ABC, на борту носія знаходиться прах 152 осіб у металевих капсулах, які випустять у відкритий космос. Такі послуги надає компанія Celestis Memorial Spaceflights, їхня вартість становить від $5 тис. до $12,5 тис.",
+      "description": "Американська компанія SpaceX запустила в космос ракету-носій Falcon Heavy з 24 супутниками, дослідницькою лабораторією та атомним годинником на борту.",
+      "typeNews": "additional",
+      "id": 2
+    },
+    {
+      "publishedAt": "Mon Jun 08 2020 18:08:51 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "Чорне дзеркало 6 сезон: чи варто очікувати фанатам на продовженя фантастичного серіалу",
+      "category": "business",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2F1c681586-ae92-4abb-a250-9dbf42d28504.jpeg?alt=media&token=f30dcf8f-71a5-4a2a-b6bf-b25c4a4a7d6e",
+      "url": "http://localhost:4200",
+      "content": "Я весь час щось пишу, але не впевнений, що можу зараз розповідати про свою роботу. Не думаю, що зараз людям буде цікаво дивитися про розкладання суспільства, тому я не працюю зараз над жодним із цих (епізодів Чорного дзеркала, – LifeStyle 24). Мені хочеться повернутися до комедії, тому я писав сценарії, які змушують в першу чергу мене сміятися?\n– поділився сценарист серіалу.\n\nПитання щодо виходу 6 сезону серіалу є цілком логічними, адже останній 5 сезон з'явився на екранах у червні 2019 року, і враховуючи те, що сезони зазвичай виходили з перервою у рік, то у червні 2020-го слід було очікувати нових карколомних історій 6 сезону. Втім, Чарлі Брукер ще у 2019-му році не був впевнений, що варто чекати на вихід шостого сезону.\n\n\"Я не думаю, що є щось, що може нас зупинити. Ми могли б зробити один раз, ми могли б зробити безперервну історію, ми могли б зробити додаткові\", – таємничо відповів Брукер. \n\n",
+      "description": "Одна з найвідоміших кінострічок сучасності \"Чорне дзеркало\" здобула чималу славу через правдоподібність деяких сюжетів та моторошні історії, які можуть трапитись з людьми в майбутньому. Автор серіалу розповів, чи варто очікувати фанатам на 6 сезон після пандемії коронавірусу.",
+      "typeNews": "general",
+      "id": 3
+    },
+    {
+      "publishedAt": "Mon Jun 08 2020 18:16:49 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "",
+      "category": "health",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2Fae76e990-4079-405d-b1d6-9a8d401a3c44.jpeg?alt=media&token=2c7f95fc-7180-446c-9c03-cac44ab8a66b",
+      "url": "http://localhost:4200",
+      "content": "",
+      "description": "some",
+      "typeNews": "additional",
+      "id": 4
+    },
+    {
+      "publishedAt": "Mon Jun 08 2020 18:18:15 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "",
+      "category": "business",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2F66e19c5b-a560-4b83-84b2-8b90842f9ca2.jpeg?alt=media&token=72b992e6-b07a-47db-abd2-f0378c297366",
+      "url": "http://localhost:4200",
+      "content": "asdasd",
+      "description": "asdasd",
+      "typeNews": "additional",
+      "id": 5
+    },
+    {
+      "publishedAt": "Mon Jun 08 2020 18:32:03 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "Щось таке",
+      "category": "business",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2F8c9e76c4-afa8-4c14-9bdf-dcc3155a984d.jpeg?alt=media&token=7114a5d9-e41b-4372-a293-650c722a0ce1",
+      "url": "http://localhost:4200",
+      "content": "",
+      "description": "",
+      "typeNews": "general",
+      "id": 6
+    },
+    {
+      "publishedAt": "Mon Jun 08 2020 18:46:01 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "aaaaa1111",
+      "category": "business",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2F847b7bf5-83de-4d8a-af2e-1e826c934113.jpeg?alt=media&token=883a146a-f9a1-46c2-bd2f-50f10ab829ec",
+      "url": "http://localhost:4200",
+      "content": "",
+      "description": "",
+      "typeNews": "additional",
+      "id": 7
+    },
+    {
+      "publishedAt": "Mon Jun 08 2020 18:30:12 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "щось важливе",
+      "category": "business",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2F847b7bf5-83de-4d8a-af2e-1e826c934113.jpeg?alt=media&token=883a146a-f9a1-46c2-bd2f-50f10ab829ec",
+      "url": "http://localhost:4200",
+      "content": "",
+      "description": "",
+      "typeNews": "additional",
+      "id": 8
+    },
+    {
+      "publishedAt": "Sat Jun 13 2020 18:44:36 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "Головна новина",
+      "category": "business",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2F4b949356-4a71-4b00-8de8-e7ac905c55f1.jpeg?alt=media&token=0bf88b3f-20fb-47d0-8255-cb0531a449a6",
+      "url": "http://localhost:4200",
+      "content": "4444444444444444444444444444",
+      "description": "333333333333333333333",
+      "typeNews": "general",
+      "id": 10
+    },
+    {
+      "publishedAt": "Sat Jun 13 2020 18:49:40 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "Angular 9",
+      "category": "general",
+      "urlToImage": "",
+      "url": "http://localhost:4200",
+      "content": "",
+      "description": "",
+      "typeNews": "general",
+      "id": 11
+    },
+    {
+      "publishedAt": "Sat Jun 13 2020 18:50:25 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "Головна новина!!!!!!!!",
+      "category": "general",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2Fe60c7c0f-962d-4325-973b-d9a4a0117e84.jpeg?alt=media&token=fa4f63c3-3fba-430c-a04a-f148ab56f115",
+      "url": "http://localhost:4200",
+      "content": "1111111111111111111",
+      "description": "22222222222222222222222",
+      "typeNews": "general",
+      "id": 12
+    },
+    {
+      "publishedAt": "Sat Jun 13 2020 18:51:37 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Алла Мазур",
+      "name": "24 News",
+      "title": "Розваги",
+      "category": "entertainment",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2F329aef05-7386-4bca-b623-fd913a14be96.jpeg?alt=media&token=2e5a7afc-045c-4b67-bcab-46d84c82b8b5",
+      "url": "http://localhost:4200",
+      "content": "6666666666666666",
+      "description": "66666666666666",
+      "typeNews": "additional",
+      "id": 13
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "nameUA": "головні",
+      "nameEN": "general",
+      "color": "#fcfcfc",
+      "bgColor": "#57eab9"
+    },
+    {
+      "id": 2,
+      "nameUA": "бізнес",
+      "nameEN": "business",
+      "color": "#ffffff",
+      "bgColor": "#c84c88"
+    },
+    {
+      "id": 3,
+      "color": "#000",
+      "bgColor": "transparent",
+      "nameUA": "розваги",
+      "nameEN": "entertainment"
+    },
+    {
+      "id": 4,
+      "color": "#000",
+      "bgColor": "transparent",
+      "nameUA": "здоров'я",
+      "nameEN": "health"
+    },
+    {
+      "id": 5,
+      "color": "#000",
+      "bgColor": "transparent",
+      "nameUA": "наука",
+      "nameEN": "science"
+    },
+    {
+      "id": 6,
+      "color": "#000",
+      "bgColor": "transparent",
+      "nameUA": "спорт",
+      "nameEN": "sports"
+    },
+    {
+      "id": 7,
+      "color": "#000",
+      "bgColor": "transparent",
+      "nameUA": "технології",
+      "nameEN": "technology"
+    },
+    {
+      "nameUA": "Halk",
+      "nameEN": "halk",
+      "color": "#0c5a0f",
+      "bgColor": "#61dbb7",
+      "id": 8
+    }
+  ],
+  "news-second": [
+    {
+      "publishedAt": "Wed Jun 03 2020 20:46:59 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Arnoldo",
+      "name": "news 24",
+      "title": "COVID-19 НЕ ЗДАЄТЬСЯ",
+      "category": "sports",
+      "urlToImage": "https://www.film.ru/sites/default/files/styles/thumb_1024x450/public/filefield_paths/14627255723080.jpg",
+      "url": "dat.url.stringValue",
+      "content": "dat.content.stringValue",
+      "description": "some original description",
+      "id": 1
+    },
+    {
+      "publishedAt": "Wed Jun 03 2020 22:29:03 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "new post",
+      "name": "Vasyl Kurnat",
+      "title": "BMW пезентувала нову модель",
+      "category": "technology",
+      "urlToImage": "https://auto.24tv.ua/resources/photos/news/1366x500_DIR/202005/2150134a2f605-e36a-485e-b2b4-85f9403f0f30.jpeg?1590652702000",
+      "url": "",
+      "content": "Його місія: встановлювати нові стандарти. BMW 5 серії є втіленням сучасного бізнес-седана. Завдяки своєму динамічному і одночасно елегантному зовнішньому вигляду, він переконливо виправдовує очікування, які покладаються сьогодні на автомобіль даного класу: естетичний атлетизм та задоволення за кермом.\n\nКомпанія \"АВТ Баварія Київ\", офіційний дилер BMW в місті Київ та Київській області, пропонує Вам можливість придбати автомобілі BMW 5 серії за спеціальними цінами*.\n\nКількість автомобілів обмежена.\n\nДля автомобілів BMW 5 серії діють спеціальні фінансові умови від BMW Financial Services з відсотковою ставкою від 0,01% річних.",
+      "description": "СПЕЦІАЛЬНІ ПРОПОЗИЦІЇ НА АВТОМОБІЛІ BMW 5 СЕРІЇ.",
+      "id": 3
+    },
+    {
+      "publishedAt": "Wed Jun 03 2020 18:34:26 GMT+0300 (за східноєвропейським літнім часом)",
+      "author": "Чубака",
+      "name": "Star Wars",
+      "title": "Чубака хоче уникнути відповідальності",
+      "category": "sports",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-58993.appspot.com/o/images%2Fd840daf6-083c-4b57-9e13-9678aab575a1.jpeg?alt=media&token=ae74d170-9b3b-4598-b410-800d60dd5c5c",
+      "url": "http://localhost:4200/admin/add-news",
+      "content": "персонаж кіносаги «Зоряні війни». Чубакка — мандрівник з племені вукі, механік на космічному кораблі Гана Соло «Тисячолітній Сокіл». Син Аттічіткука, чоловік Маллатобук і батько Лумпаваррампа.",
+      "description": "Чубакка мандрівник...",
+      "id": 4
+    }
+  ]
+}

@@ -1,23 +1,41 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-primary app-shadow">
-    <!-- logo -->
-    <a class="navbar-brand" [routerLink]="['/']">Home</a>
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarMenu">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item" routerLinkActive="active">
-            <!-- News -->
-          <a  class="nav-link" routerLink="news">News</a>
-        </li>
-        <li class="nav-item" routerLinkActive="active">
+<div class="nav-fix ">
+  <nav class="header-nav navbar navbar-expand-sm navbar-light p-0  ">
+    <div class="container-sm header__wrapp p-0">
+      <!-- logo -->
+      <a class="navbar-brand navbar-light app-bg-red app-bg-red-1 pl-4 pr-3 d-flex justify-content-center align-items-center"
+        [routerLink]="['/']">
+        <span class="h4">24 News &#160;<i class="fas fa-bullhorn"></i>
+        </span>
+      </a>
+      <button class="navbar-toggler mr-4" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse navbarMenu" id="navbarMenu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" routerLinkActive="active">
             <!-- Login -->
-          <a class="nav-link" routerLink="profile">Profile</a>
-        </li>
-      </ul>
+            <a class="nav-link" [routerLink]="['/admin']">Адмін</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
+  <div class="bg-light app-shadow category__wrapp">
+    <ul class="container d-flex justify-content-around justify-content-lg-center flex-wrap pt-2 pb-2 p-1"
+      *ngIf="categorysArray.length">
+
+      <li class="underline ml-md-3 mr-md-3 round"
+        *ngFor="let category of categorysArray"
+        [ngStyle]="{'background-color': category.bgColor, 'color': category.color}">
+
+        <a class="app-link"
+        [routerLink]="[ '/category', category.nameEN ]"
+        [ngStyle]="{'color': category.color}">{{category.nameUA | titlecase}}</a>
+
+      </li>
 
 
-
+    </ul>
+  </div>
+</div>

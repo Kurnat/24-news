@@ -1,5 +1,19 @@
 {
-  "database": {
-    "rules": "database.rules.json"
-  }
+  "hosting": [
+    {
+      "target": "wwwest-solutions",
+      "public": "dist/wwwest-solutions",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
 }

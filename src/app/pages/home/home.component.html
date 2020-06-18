@@ -1,7 +1,66 @@
-<div class="d-flex h-100 justify-content-center align-content-center align-items-center text-white">
-  <div class="text-center">
-    <p class="h1">Welcome to this blue Website!</p>
-    <p>Here you can find a top news</p>
-  </div>
-</div>
+<div class="container">
+  <div class="row">
+    <!-- left block -->
+    <div class="col-12 col-md-5 col-lg-4">
+      <app-second-news></app-second-news>
+    </div>
+    <!-- center block -->
+    <div class="col-12 col-md-7 col-lg-6">
+      <div class="d-flex justify-content-center flex-wrap">
+        <p class="m-1 pl-2 pr-2 pink">Карантин в Україні 2020</p>
+        <p class="m-1 pl-2 pr-2 pink">Коронавірус COVID-19</p>
+        <p class="m-1 pl-2 pr-2 pink">Кримські татари</p>
+      </div>
+      <!-- covid -->
+      <div class="row text-center mb-4 d-flex justify-content-center">
+        <div class="d-none d-lg-block col-3 border border-white bg-light">
+          <div>
+            <p class="font-weight-bolder m-1">COVID</p>
+            <a href="#" class="details_link d-flex align-items-center justify-content-center rem-08">
+              Детальніне &#160; <i class="fas fa-chevron-right rem-06"></i>
+            </a>
+          </div>
+          <div class="row">
+            <p class="my-active col-7 border border-white bg-light p-0 m-0 font-weight-bolder">Україна</p>
+            <p class="col-5 border border-white bg-light p-0 m-0 ">Світ</p>
+          </div>
+        </div>
+        <div class="d-none d-lg-block col-3 border border-white bg-light">
+          <p class="rem-08">Підтвердженні</p>
+          <p class="h4">18616<span class="rem-08 my-active">+325</span></p>
+        </div>
+        <div class="d-none d-lg-block col-3 border border-white bg-light">
+          <p class="rem-08">Вилікувались</p>
+          <p class="h4">5276<span class="rem-08 my-active">+160</span></p>
+        </div>
+        <div class="d-none d-lg-block col-2 border border-white bg-light">
+          <p class="rem-08">Померло</p>
+          <p class="h4">535<span class="rem-08 my-active">+21</span></p>
+        </div>
+      </div>
 
+
+
+      <app-news></app-news>
+
+
+
+    </div>
+    <!-- right block -->
+    <div class="aside col-12 col-lg-2 d-flex justify-content-center align-items-center bg-secondary mb-3">
+      <p class="text-center text-light h2">Тут може бути ваша реклама!</p>
+    </div>
+  </div>
+
+
+  <nav aria-label="5" class="d-flex justify-content-center">
+    <ul class="pagination">
+      <li class="page-item "><a class="page-link" href="#">&laquo;</a></li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+    </ul>
+  </nav>
+
+</div>

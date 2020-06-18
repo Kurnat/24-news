@@ -1,13 +1,18 @@
+import { ModalModule } from 'ngx-bootstrap/modal';
 // Core
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { environment } from 'environments/environment';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+
+// utilits
 
 // Components
-import { environment } from 'environments/environment';
+
 
 
 
@@ -19,14 +24,15 @@ import { environment } from 'environments/environment';
     CommonModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase), // Firebase
-    AngularFireDatabaseModule,
+    AngularFireStorageModule,
 
   ],
   exports: [
     CommonModule,
     ReactiveFormsModule,
     AngularFireModule,
-    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    ModalModule,
   ],
   providers: [
     AngularFirestore,

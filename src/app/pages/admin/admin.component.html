@@ -1,0 +1,41 @@
+<div class="container mb-5">
+
+  <div class="navbar navbar-expand navbar-dark bg-dark mb-3">
+
+      <ul class="navbar-nav w-100">
+
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="[ '/admin', 'add-news']">Створити новину</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="[ '/admin', 'all-news']">Основні новини</a>
+        </li>
+        <!-- <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="[ '/admin', 'additional-news']">Додаткові новини</a>
+        </li> -->
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="[ '/admin', 'category']">Категорії</a>
+        </li>
+      </ul>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link" [routerLink]="[ '/admin', 'add-news']">Створити новину</a>
+        <a class="nav-link" [routerLink]="[ '/admin', 'all-news']">Показати новини</a>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="tab-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div> -->
