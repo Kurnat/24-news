@@ -137,5 +137,8 @@
       }
     }
   },
-  "defaultProject": "wwwest-solutions"
+  "defaultProject": "wwwest-solutions",
+  "cli": {
+    "analytics": false
+  }
 }
