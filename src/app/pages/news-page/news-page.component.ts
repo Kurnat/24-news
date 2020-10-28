@@ -1,4 +1,4 @@
-import { Article } from './../../shared/interfaces/article.interface';
+import { IArticle } from './../../shared/interfaces/article.interface';
 import { DbService } from 'app/shared/services/db.service';
 import { CloudService } from 'app/shared/services/cloud.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -8,26 +8,26 @@ import { Route } from '@angular/compiler/src/core';
 @Component({
   selector: 'app-news-page',
   templateUrl: './news-page.component.html',
-  styleUrls: ['./news-page.component.scss']
+  styleUrls: ['./news-page.component.scss'],
 })
 export class NewsPageComponent implements OnInit {
   checker = false;
   public article;
   constructor(
-              private activatedRoute: ActivatedRoute,
-              private cloudService: CloudService,
-              private db: DbService) { }
+    private activatedRoute: ActivatedRoute,
+    private cloudService: CloudService,
+    private db: DbService
+  ) {}
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.db.getById(id).subscribe(data => {
+    this.db.getById(id).subscribe((data) => {
       if (data) {
         this.article = data;
         this.checker = true;
       } else {
         this.checker = false;
       }
-
     });
 
     //   const objData = {
@@ -44,11 +44,8 @@ export class NewsPageComponent implements OnInit {
     //   console.log(objData);
 
     //   this.article = objData;
-// tslint:disable-next-line:new-parens
+    // tslint:disable-next-line:new-parens
 
     // });
-
-
   }
-
 }

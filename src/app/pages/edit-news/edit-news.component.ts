@@ -2,7 +2,7 @@ import { CommunicationService } from './../../shared/services/communication.serv
 import { FormGroup, FormControl } from '@angular/forms';
 import { CategoryService } from './../../shared/services/category.service';
 import { Category } from './../../shared/interfaces/category.interface';
-import { Article } from './../../shared/interfaces/article.interface';
+import { IArticle } from './../../shared/interfaces/article.interface';
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 
@@ -13,7 +13,7 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class EditNewsComponent implements OnInit {
 
-  @Input() article: Article;
+  @Input() article: IArticle;
   private eventsSubscription: Subscription;
 
   @Input() events: Observable<void>;

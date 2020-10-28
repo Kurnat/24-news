@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'environments/environment';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 // utilits
@@ -25,17 +25,16 @@ import { AngularFirestore } from '@angular/fire/firestore';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase), // Firebase
     AngularFireStorageModule,
-
+    ModalModule,
   ],
   exports: [
-    CommonModule,
     ReactiveFormsModule,
     AngularFireModule,
     AngularFireStorageModule,
     ModalModule,
   ],
   providers: [
-    AngularFirestore,
+    AngularFireStorageModule ,
   ]
 })
 export class SharedModule { }

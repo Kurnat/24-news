@@ -6,13 +6,14 @@ export const environment = {
   production: false,
 
    firebase: {
-    apiKey: 'AIzaSyC1tswG0uzUrykcrjgkb5oike34F1T6jLA',
-    authDomain: 'news-58993.firebaseapp.com',
-    databaseURL: 'https://news-58993.firebaseio.com',
-    projectId: 'news-58993',
-    storageBucket: 'news-58993.appspot.com',
-    messagingSenderId: '107111868480',
-    appId: '1:107111868480:web:ebb92dc2d063728a7f17a5'
+    apiKey: 'AIzaSyAJebPM1dFAJzv3HDiyvzTrOYCDoTuenFs',
+    authDomain: 'news-9f457.firebaseapp.com',
+    databaseURL: 'https://news-9f457.firebaseio.com',
+    projectId: 'news-9f457',
+    storageBucket: 'news-9f457.appspot.com',
+    messagingSenderId: '1051581583318',
+    appId: '1:1051581583318:web:65e19ec03e5f4ec8561e77',
+    measurementId: 'G-1S2QHM15E4'
   }
 };
 

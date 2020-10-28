@@ -4,7 +4,7 @@ import { CategoryService } from './../../shared/services/category.service';
 import { DbService } from 'app/shared/services/db.service';
 
 import { FormGroup, FormControl } from '@angular/forms';
-import { News, Article } from 'app/shared/interfaces/article.interface';
+import { News, IArticle } from 'app/shared/interfaces/article.interface';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { CloudService } from 'app/shared/services/cloud.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
@@ -16,7 +16,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class AllNewsComponent implements OnInit {
   modalRef: BsModalRef;
-  news: Article[] = [];
+  news: IArticle[] = [];
   artileId: string;
   chekerAddOrEdit = true;
   categoris: Category[];
@@ -50,7 +50,7 @@ export class AllNewsComponent implements OnInit {
     });
   }
 
-  openEditArticle(template: TemplateRef<any>, article: Article): void {
+  openEditArticle(template: TemplateRef<any>, article: IArticle): void {
     console.log(article);
     this.artileId = article.id;
     this.form = new FormGroup({

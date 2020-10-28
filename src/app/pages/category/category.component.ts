@@ -2,7 +2,7 @@ import { DbService } from 'app/shared/services/db.service';
 import { ActivatedRoute, Event, Router, NavigationEnd } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Category } from 'app/shared/interfaces/category.interface';
-import { Article } from 'app/shared/interfaces/article.interface';
+import { IArticle } from 'app/shared/interfaces/article.interface';
 
 @Component({
   selector: 'app-category',
@@ -11,7 +11,7 @@ import { Article } from 'app/shared/interfaces/article.interface';
 })
 export class CategoryComponent implements OnInit {
 
-  news: Article[] = [];
+  news: IArticle[] = [];
   checkLoader: boolean;
 
   constructor(

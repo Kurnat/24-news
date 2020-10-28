@@ -13,16 +13,17 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { NewsPageComponent } from './pages/news-page/news-page.component';
 import { AdminCategoryComponent } from './pages/admin-category/admin-category.component';
 import { AdditionalComponent } from './pages/additional/additional.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'category/:category', component: CategoryComponent },
-  { path: 'login', component: LoginComponent, pathMatch: 'full' },
-  { path: 'news-page/:id', component: NewsPageComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'news-page/:id', component: NewsPageComponent,  },
   { path: 'additional/:id', component: AdditionalComponent, pathMatch: 'full'},
-  { path: 'admin', component: AdminComponent, children: [
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
     {path: 'add-news', component: AddNewsComponent},
     {path: 'all-news', component: AllNewsComponent},
     {path: 'category', component: AdminCategoryComponent},

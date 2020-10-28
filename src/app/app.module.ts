@@ -1,7 +1,7 @@
-import { QuillModule } from 'ngx-quill';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgxPaginationModule } from 'ngx-pagination';
 
@@ -30,15 +30,19 @@ import { NavbarAdminComponent } from './components/admin/navbar-admin/navbar-adm
 import { NewsPageComponent } from './pages/news-page/news-page.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AddNewsComponent } from './pages/add-news/add-news.component';
+import { NewsComponent } from './pages/news/news.component';
 import { AllNewsComponent } from './pages/all-news/all-news.component';
 
 // Modules
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
-import { NewsComponent } from './pages/news/news.component';
 import { environment } from 'environments/environment';
 import { NewsDatePipe } from './shared/pipes/news-date.pipe';
 import { NewsSearchPipe } from './shared/pipes/news-search.pipe';
+import { QuillModule } from 'ngx-quill';
+import { ChangeColorDirective } from './shared/directives/change-color.directive';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,11 +66,12 @@ import { NewsSearchPipe } from './shared/pipes/news-search.pipe';
     EditNewsComponent,
     NewsDatePipe,
     NewsSearchPipe,
+    ChangeColorDirective
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
@@ -74,11 +79,13 @@ import { NewsSearchPipe } from './shared/pipes/news-search.pipe';
     ReactiveFormsModule,
     ModalModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireAuthModule,
     SharedModule,
-    QuillModule,
+    QuillModule.forRoot(),
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

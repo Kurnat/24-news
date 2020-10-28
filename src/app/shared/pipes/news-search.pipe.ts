@@ -1,5 +1,5 @@
 import { Category } from './../interfaces/category.interface';
-import { Article } from 'app/shared/interfaces/article.interface';
+import { IArticle } from 'app/shared/interfaces/article.interface';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({

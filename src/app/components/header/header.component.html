@@ -16,6 +16,10 @@
             <!-- Login -->
             <a class="nav-link" [routerLink]="['/admin']">Адмін</a>
           </li>
+          <li class="nav-item" routerLinkActive="active">
+            <!-- Login -->
+            <span class="nav-link" (click)="logout()">Logout</span>
+          </li>
         </ul>
       </div>
     </div>

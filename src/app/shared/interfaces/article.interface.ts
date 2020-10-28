@@ -1,4 +1,4 @@
-export interface Article {
+export interface IArticle {
     source?: object;
     name?: string;
     author: string;
@@ -14,7 +14,7 @@ export interface Article {
 }
 
 export interface News {
-    articles: Article[];
+    articles: IArticle[];
     totalResults: number;
     status: string;
 }
