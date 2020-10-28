@@ -1,6 +1,7 @@
+import { Subscription } from 'rxjs';
 import { DbService } from 'app/shared/services/db.service';
-import { Article } from './../../shared/interfaces/article.interface';
-import { Component, OnInit } from '@angular/core';
+import { IArticle } from './../../shared/interfaces/article.interface';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NewsSecondService } from 'app/shared/services/news-second.service';
 
 @Component({
@@ -8,9 +9,10 @@ import { NewsSecondService } from 'app/shared/services/news-second.service';
   templateUrl: './second-news.component.html',
   styleUrls: ['./second-news.component.scss']
 })
-export class SecondNewsComponent implements OnInit {
+export class SecondNewsComponent implements OnInit, OnDestroy {
 
-  articles: Article[];
+  articles: IArticle[];
+  db$: Subscription;
   constructor(private newsSecondService: NewsSecondService,
               private db: DbService) {}
 
@@ -19,9 +21,13 @@ export class SecondNewsComponent implements OnInit {
   }
 
   getSecondNews() {
-    this.db.getAdditionalData().subscribe((data: Article[]) => {
+    this.db$ = this.db.getAdditionalData().subscribe((data: IArticle[]) => {
       this.articles = data;
     });
+  }
+
+  ngOnDestroy() {
+    if (this.db$) { this.db$.unsubscribe(); }
   }
 
 }

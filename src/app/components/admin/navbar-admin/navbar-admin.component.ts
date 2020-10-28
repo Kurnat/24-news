@@ -1,4 +1,4 @@
-import { Article } from './../../../shared/interfaces/article.interface';
+import { IArticle } from './../../../shared/interfaces/article.interface';
 import { Subscription } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -18,7 +18,7 @@ export class NavbarAdminComponent implements OnInit, OnDestroy {
 
   // page
   p = 1;
-  collection: Article[] = [];
+  collection: IArticle[] = [];
 
   ngOnInit(): void {
     this.form = new FormGroup({

@@ -33,10 +33,9 @@
       </div>
 
       <p class="h3 mb-4">{{article.description}}</p>
-      <p>{{article.content}}</p>
-      <p class="text-right text-muted">Автор: <span class="">{{article.author}}</span></p>
+      <!-- <p>{{article.content}}</p> -->
+      <quill-view-html [content]="article.content" theme="snow"></quill-view-html>
+      <p class="text-right text-muted"><span appChangeColor>Автор: <span class="">{{article.author}}</span></span></p>
     </div>
-
   </div>
-
 </div>

@@ -1,6 +1,6 @@
 import { DbService } from './../../shared/services/db.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { Article } from './../../shared/interfaces/article.interface';
+import { IArticle } from './../../shared/interfaces/article.interface';
 import { NewsSecondService } from './../../shared/services/news-second.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdditionalComponent implements OnInit {
 
-  article: Article;
+  article: IArticle;
 
   bsModalRef: BsModalRef;
 
@@ -29,7 +29,7 @@ export class AdditionalComponent implements OnInit {
 
   getAdditinalNewsById(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.db.getById(id).subscribe( (data: Article) => {
+    this.db.getById(id).subscribe( (data: IArticle) => {
       this.article = data;
       console.log(data);
 

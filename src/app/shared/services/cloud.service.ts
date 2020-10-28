@@ -6,24 +6,24 @@ import { Injectable } from '@angular/core';
 })
 export class CloudService {
 
-  // constructor(private firestore: AngularFirestore) {}
+  constructor(private firestore: AngularFirestore) {}
 
-  // getDataById(id) {
-  //   return this.firestore.collection('news').doc(id).get();
-  // }
-  // getData(): any {
-  //   return this.firestore.collection('news').snapshotChanges();
-  // }
+  getDataById(id) {
+    return this.firestore.collection('news').doc(id).get();
+  }
+  getData(): any {
+    return this.firestore.collection('news').snapshotChanges();
+  }
 
-  // setData(data: any): any {
-  //   return this.firestore.collection('news').add(data);
-  // }
+  setData(data: any): any {
+    return this.firestore.collection('news').add(data);
+  }
 
-  // deleteData(id: string) {
-  //   this.firestore.doc('news/' + id).delete();
-  // }
+  deleteData(id: string) {
+    this.firestore.doc('news/' + id).delete();
+  }
 
-  // updateData(id: string, data) {
-  //   this.firestore.doc('news/' + id).update(data);
-  // }
+  updateData(id: string, data) {
+    this.firestore.doc('news/' + id).update(data);
+  }
 }

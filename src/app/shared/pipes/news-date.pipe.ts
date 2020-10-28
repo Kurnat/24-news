@@ -1,4 +1,4 @@
-import { Article } from 'app/shared/interfaces/article.interface';
+import { IArticle } from 'app/shared/interfaces/article.interface';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -6,10 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class NewsDatePipe implements PipeTransform {
 
-  transform(articles: Article[]): any {
+  transform(articles: IArticle[]): any {
 
     if (articles) {
-        articles.sort((article1: Article, article2: Article) => {
+        articles.sort((article1: IArticle, article2: IArticle) => {
           return +new Date(article2.publishedAt) - +new Date(article1.publishedAt);
         });
 

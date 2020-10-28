@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
-import { Article, News } from 'app/shared/interfaces/article.interface';
+import { IArticle, News } from 'app/shared/interfaces/article.interface';
 import { TodoService } from 'app/shared/services/todo.service';
 import { DbService } from 'app/shared/services/db.service';
 

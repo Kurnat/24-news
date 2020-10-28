@@ -1,4 +1,4 @@
-import { Article } from 'app/shared/interfaces/article.interface';
+import { IArticle } from 'app/shared/interfaces/article.interface';
 import { DbService } from 'app/shared/services/db.service';
 
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
@@ -21,7 +21,7 @@ export class NewsComponent implements OnInit, OnDestroy {
 
   // news$: Subscription;
 
-  news: Article[] = [];
+  news: IArticle[] = [];
 
   constructor(private cloudService: CloudService,
               private angularFirestore: AngularFirestore,
@@ -29,7 +29,8 @@ export class NewsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     // this.cloudService.getData().subscribe(articles => {
-    //   this.news = articles.map( todo => {
+    //   this.news
+    //   = articles.map( todo => {
     //     return {
     //       id: todo.payload.doc.id,
     //       ...todo.payload.doc.data()

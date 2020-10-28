@@ -1,5 +1,5 @@
 import { CommunicationService } from './../../shared/services/communication.service';
-import { Article } from './../../shared/interfaces/article.interface';
+import { IArticle } from './../../shared/interfaces/article.interface';
 import { NewsSecondService } from './../../shared/services/news-second.service';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Subject, Subscription, Observable } from 'rxjs';
@@ -13,13 +13,13 @@ export class AdditionalNewsComponent implements OnInit, OnDestroy {
 
   // private eventsSubscription: Subscription;
 
-  article: Article;
+  article: IArticle;
 
   @Input() events: Observable<void>;
 
 
-  artileForEdit: Article;
-  articles: Article[];
+  artileForEdit: IArticle;
+  articles: IArticle[];
 
   eventsSubject: Subject<void> = new Subject<void>();
 
@@ -36,13 +36,13 @@ export class AdditionalNewsComponent implements OnInit, OnDestroy {
 
 
   getNewsArticles() {
-    this.newsSecondService.getData().subscribe((data: Article[]) => {
+    this.newsSecondService.getData().subscribe((data: IArticle[]) => {
       this.articles = data;
     });
   }
 
   // open modal to Edit the category
-  openEditArticle(template, article: Article) {
+  openEditArticle(template, article: IArticle) {
     this.editModal = true;
     this.article = article;
     this.artileForEdit = article;

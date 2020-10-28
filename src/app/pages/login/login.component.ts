@@ -1,14 +1,10 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFireDatabase } from '@angular/fire/database';
+// import { AngularFireDatabase } from '@angular/fire/database';
 
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AuthService } from './../../shared/services/auth.service';
-
-
-
-
 
 @Component({
   selector: 'app-login',
@@ -17,54 +13,42 @@ import { AuthService } from './../../shared/services/auth.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  incorectValues = false;
+  public incorectValues: string;
   users: Observable<any[]>;
 
-  form: FormGroup = new FormGroup({
-    username: new FormControl(null, Validators.required),
-    password: new FormControl(null, Validators.required),
-  });
-  auth$: Subscription;
-
-  // keep a value of the authorization from Firebase
-  permission: {password: string, username: string};
-
+  form: FormGroup;
 
 
   constructor(
     private authService: AuthService,
-    private db: AngularFireDatabase,
-    private route: Router) {
-    this.users = this.db.list('users').valueChanges();
-  }
+    private route: Router) { }
 
   ngOnInit(): void {
-    // get password and username from firabase
-    this.auth$ = this.users.subscribe((val) => {
-      console.log(val);
-      this.permission = val[0];
+    this.form = new FormGroup({
+      username: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
     });
   }
 
-  onSubmit(form) {
-    // check permission for authorization
-    if (form.value.username === this.permission.username && form.value.password === this.permission.password) {
+  async onSubmit(form) {
+    console.log('onSubmit1');
 
-      // save authorization in localStorage
+    const res = await this.authService.signIn(this.form.value.username, this.form.value.password);
+    console.log('res', res);
+
+    if ((res?.user as any)?.email === 'admin@gmail.com') {
       this.authService.setAdminPermission(true);
-      this.route.navigate(['/profile']);
+      this.route.navigate(['/admin/all-news']);
 
       // if input is valid
-      this.incorectValues = false;
+      this.incorectValues = '';
       this.form.reset();
     } else {
-      // if input is invalid
-      this.incorectValues = true;
-      this.authService.setAdminPermission(false);
+       // if input is invalid
+       this.incorectValues = res.message;
+       this.authService.clearPermission();
     }
   }
 
-  ngOnDestroy(): void {
-    this.auth$.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 }

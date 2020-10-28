@@ -75,12 +75,16 @@
 
   <div class="form-group mb-3">
     <label for="content">Контент</label>
-    <textarea class="form-control is-valid" formControlName="content" id="content" placeholder="Написати контент..."
-      required></textarea>
+    <!-- <textarea class="form-control is-valid" formControlName="content" id="content" placeholder="Написати контент..."
+      required></textarea> -->
+      <quill-editor [styles]="{height: '300px'}" class="quill" formControlName="content"  id="content"></quill-editor>
+
+
     <div class="invalid-feedback">
       Поле контенту обов'язкове
     </div>
   </div>
+
 
   <div class="form-group">
     <div class="form-check">

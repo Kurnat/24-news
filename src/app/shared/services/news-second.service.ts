@@ -1,4 +1,4 @@
-import { Article } from './../interfaces/article.interface';
+import { IArticle } from './../interfaces/article.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -11,25 +11,25 @@ export class NewsSecondService {
   url = 'http://localhost:3000/news?typeNews=additional';
   constructor(private http: HttpClient) { }
 
-  getData(): Observable<Article[]> {
-    return this.http.get<Article[]>(`${this.url}`);
+  getData(): Observable<IArticle[]> {
+    return this.http.get<IArticle[]>(`${this.url}`);
   }
 
-  getById(id): Observable<Article> {
-    return this.http.get<Article>(`${this.url}/${id}`);
+  getById(id): Observable<IArticle> {
+    return this.http.get<IArticle>(`${this.url}/${id}`);
   }
 
-  setData(data): Observable<Article> {
-    return this.http.post<Article>(`${this.url}`, data);
+  setData(data): Observable<IArticle> {
+    return this.http.post<IArticle>(`${this.url}`, data);
   }
 
-  deleteData(id): Observable<Article> {
-    return this.http.delete<Article>(`${this.url}/${id}`);
+  deleteData(id): Observable<IArticle> {
+    return this.http.delete<IArticle>(`${this.url}/${id}`);
   }
 
-  updateData(data): Observable<Article> {
+  updateData(data): Observable<IArticle> {
     console.log(data);
-    return this.http.put<Article>(`${this.url}/${data.id}`, data);
+    return this.http.put<IArticle>(`${this.url}/${data.id}`, data);
   }
 
   getDataByCategoty(category) {
