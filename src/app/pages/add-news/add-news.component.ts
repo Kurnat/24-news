@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { CategoryService } from './../../shared/services/category.service';
 import { Observable } from 'rxjs';
 import { DbService } from 'app/shared/services/db.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Category } from 'app/shared/interfaces/category.interface';
@@ -41,21 +41,25 @@ export class AddNewsComponent implements OnInit {
     this.form = new FormGroup({
       author: new FormControl('Алла Мазур'),
       name: new FormControl('24 News'),
-      title: new FormControl(''),
+      title: new FormControl('', Validators.required),
       category: new FormControl('business'),
       urlToImage: new FormControl(''),
       url: new FormControl('http://localhost:4200'),
-      content: new FormControl(''),
-      description: new FormControl(''),
+      content: new FormControl('',  Validators.required),
+      description: new FormControl('', Validators.required),
       typeNews: new FormControl('general'),
     });
   }
 
   submit(): void {
-    const data = new Article({publishedAt: new Date().toString(), ...this.form.value});
-
-    // adding data to server
-    this.db.setData(data).subscribe(() => this.router.navigate(['/']));
+    if (this.form.valid) {
+      const data = new Article({
+        publishedAt: new Date().toString(),
+        ...this.form.value,
+      });
+      // adding data to server
+      this.db.setData(data).subscribe(() => this.router.navigate(['/']));
+    }
   }
 
   uploadFile(event) {

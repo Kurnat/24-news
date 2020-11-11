@@ -3,11 +3,13 @@ import { Category } from './../../shared/interfaces/category.interface';
 import { CategoryService } from './../../shared/services/category.service';
 import { DbService } from 'app/shared/services/db.service';
 
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { News, IArticle } from 'app/shared/interfaces/article.interface';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { CloudService } from 'app/shared/services/cloud.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { Observable } from 'rxjs';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-all-news',
@@ -20,10 +22,14 @@ export class AllNewsComponent implements OnInit {
   artileId: string;
   chekerAddOrEdit = true;
   categoris: Category[];
+  uploadProgress: Observable<number>;
+  imageUrl: string;
+
   constructor(
     private modalService: BsModalService,
     private categoryService: CategoryService,
-    private db: DbService
+    private db: DbService,
+    private afStorage: AngularFireStorage
   ) {}
 
   form: FormGroup;
@@ -39,7 +45,7 @@ export class AllNewsComponent implements OnInit {
   }
 
   getCategoris(): void {
-    this.categoryService.getAllCategorys().subscribe( (data: Category[]) => {
+    this.categoryService.getAllCategorys().subscribe((data: Category[]) => {
       this.categoris = data;
     });
   }
@@ -51,7 +57,9 @@ export class AllNewsComponent implements OnInit {
   }
 
   openEditArticle(template: TemplateRef<any>, article: IArticle): void {
-    console.log(article);
+    this.imageUrl = article.urlToImage;
+    console.log(article.urlToImage);
+
     this.artileId = article.id;
     this.form = new FormGroup({
       author: new FormControl(article.author),
@@ -60,34 +68,37 @@ export class AllNewsComponent implements OnInit {
       category: new FormControl(article.category),
       urlToImage: new FormControl(article.urlToImage),
       url: new FormControl(article.url),
-      content: new FormControl(article.content),
-      description: new FormControl(article.description),
-      typeNews: new FormControl(article.typeNews)
+      content: new FormControl(article.content, Validators.required),
+      description: new FormControl(article.description, Validators.required),
+      typeNews: new FormControl(article.typeNews),
     });
 
     this.modalRef = this.modalService.show(template);
   }
 
   submit(): void {
-    const data = {
-      publishedAt: new Date().toString(),
-      ...this.form.value,
-    };
+    if (this.form.valid) {
+      this.editArticleInServer();
+      this.modalRef.hide();
+      const data = {
+        publishedAt: new Date().toString(),
+        ...this.form.value,
+      };
 
-    // if Add article
-    if (this.chekerAddOrEdit) {
-      console.log(data);
+      // if Add article
+      if (this.chekerAddOrEdit) {
+        console.log(data);
 
-      this.db.setData(data).subscribe(() => {
-        this.getData();
-      });
-    } else {
-      data.id = this.artileId;
-      this.db.updateData(data).subscribe(() => {
-        this.getData();
-
-      });
-      this.artileId = null;
+        this.db.setData(data).subscribe(() => {
+          this.getData();
+        });
+      } else {
+        data.id = this.artileId;
+        this.db.updateData(data).subscribe(() => {
+          this.getData();
+        });
+        this.artileId = null;
+      }
     }
   }
 
@@ -99,5 +110,33 @@ export class AllNewsComponent implements OnInit {
   editArticleInServer() {
     console.log('editArticleInServer');
     this.chekerAddOrEdit = false;
+  }
+
+  uploadFile(event) {
+    const file = event.target.files[0];
+    const filePath = `images/${this.uuid()}.${file.type.split('/')[1]}`;
+    const task = this.afStorage.upload(filePath, file);
+    this.uploadProgress = task.percentageChanges();
+    task.then((e) => {
+      this.afStorage
+        .ref(`images/${e.metadata.name}`)
+        .getDownloadURL()
+        .subscribe((url) => {
+          this.imageUrl = url;
+          console.log(url);
+          this.form.get('urlToImage').setValue(url);
+          console.log(this.form.value);
+        });
+    });
+  }
+
+  uuid(): string {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+      // tslint:disable-next-line:no-bitwise
+      const r = (Math.random() * 16) | 0;
+      // tslint:disable-next-line:no-bitwise
+      const v = c === 'x' ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
   }
 }

@@ -1,5 +1,5 @@
 import { CommunicationService } from './../../shared/services/communication.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CategoryService } from './../../shared/services/category.service';
 import { Category } from './../../shared/interfaces/category.interface';
 import { IArticle } from './../../shared/interfaces/article.interface';
@@ -50,8 +50,8 @@ export class EditNewsComponent implements OnInit {
       category: new FormControl(this.article.category),
       urlToImage: new FormControl(this.article.urlToImage),
       url: new FormControl(this.article.url),
-      content: new FormControl(this.article.content),
-      description: new FormControl(this.article.description),
+      content: new FormControl(this.article.content, Validators.required),
+      description: new FormControl(this.article.description, Validators.required),
       typeNews: new FormControl(this.article.typeNews)
     });
   }

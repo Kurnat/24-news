@@ -92,22 +92,51 @@
         </div>
       </div>
 
-      <div class="form-row">
+      <!-- <div class="form-row">
         <div class="form-group col-md-6">
           <label for="url">URL</label>
           <input type="text" class="form-control" formControlName="url" name="url" id="url"
             placeholder="URL джерела...">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col">
           <label for="urlToImage">Зображення</label>
-          <input type="text" formControlName="urlToImage" class="form-control" id="urlToImage"
-            placeholder="URL Зображення...">
+          <div class="input-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="urlToImage" aria-describedby="inputGroupFileAddon01"
+                required (change)="uploadFile($event)">
+              <label class="custom-file-label" for="urlToImage">Виберіть файл</label>
+              <input type="hidden" formControlName="urlToImage">
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="row">
+        <div class="col-md-4">
+          <img [src]="imageUrl" [alt]="imageUrl" height="100%" width="100%">
+        </div>
+        <div class="col-md-8">
+          <div class="form-group col">
+            <label for="urlToImage">Зображення</label>
+            <div class="input-group">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="urlToImage" aria-describedby="inputGroupFileAddon01"
+                  required (change)="uploadFile($event)">
+                <label class="custom-file-label" for="urlToImage">Виберіть файл</label>
+                <input type="hidden" formControlName="urlToImage">
+              </div>
+            </div>
+          </div>
+          <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+              [style.width]="(uploadProgress | async) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
         </div>
       </div>
 
       <div class="form-group mb-3">
         <label for="description">Опис</label>
-        <textarea class="form-control is-invalid" formControlName="description" id="description"
+        <textarea class="form-control" [class.is-invalid]="form.get('description').invalid && form.get('description').touched" formControlName="description" id="description"
           placeholder="Короткий опис статті..." required></textarea>
         <div class="invalid-feedback">
           Поле статті обов'язкове
@@ -116,9 +145,7 @@
 
       <div class="form-group mb-3">
         <label for="content">Контент</label>
-        <!-- <textarea class="form-control is-valid" formControlName="content" id="content" placeholder="Написати контент..."
-          required></textarea> -->
-          <quill-editor [styles]="{height: '300px'}" class="quill" formControlName="content"  id="content"></quill-editor>
+          <quill-editor [styles]="{height: '300px'}" class="quill" [class.is-invalid]="form.get('content').invalid && form.get('content').touched" formControlName="content"  id="content"></quill-editor>
 
         <div class="invalid-feedback">
           Поле контенту обов'язкове
@@ -128,7 +155,7 @@
 
 
       <!-- <button type="submit" class="btn btn-success" (click)="addArticleToServer()">Додати новину</button> -->
-      <button type="submit" class="btn btn-warning" (click)="editArticleInServer(); modalRef.hide()">Оновити статтю</button>
+      <button type="submit" class="btn btn-warning" [disabled]="form.invalid">Оновити статтю</button>
     </form>
   </div>
 </ng-template>
