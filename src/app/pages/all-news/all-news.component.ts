@@ -113,43 +113,49 @@ export class AllNewsComponent implements OnInit {
         console.log(this.oldImageUrl);
 
         if (this.oldImageUrl) {
-              console.log(1);
+          console.log(1);
 
-              console.log(this.fileImg);
+          console.log(this.fileImg);
 
-              const filePath = `images/${this.uuid()}.${this.fileImg.type.split('/')[1]}`;
+          const filePath = `images/${this.uuid()}.${this.fileImg.type.split('/')[1]}`;
 
 
-              const task = this.afStorage.upload(filePath, this.fileImg);
-              this.uploadProgress = task.percentageChanges();
-              console.log(2);
+          const task = this.afStorage.upload(filePath, this.fileImg);
+          this.uploadProgress = task.percentageChanges();
+          console.log(2);
 
-              // update
-              task.then((e) => {
-                console.log(this.form.value);
+          // update
+          task.then((e) => {
+            this.afStorage
+            .ref(`images/${e.metadata.name}`)
+            .getDownloadURL()
+            .subscribe((url) => {
+              this.imageUrl = url;
+              this.form.get('urlToImage').setValue(url);
 
-                this.afStorage
-                .ref(`images/${e.metadata.name}`)
-                .getDownloadURL()
-                .subscribe((url) => {
-                  this.imageUrl = url;
-                  this.form.get('urlToImage').setValue(url);
+              this.db.updateData({...this.form.value, id: this.artileId, publishedAt: new Date().toString()}).subscribe(() => {
+                this.getData();
+                this.artileId = null;
+                this.imageUrl = undefined;
+                this.oldImageUrl = undefined;
+                this.isImageChanged = undefined;
+                this.fileImg = undefined;
+              });
 
-                  this.db.updateData({...this.form.value, id: this.artileId, publishedAt: new Date().toString()}).subscribe(() => {
-                    this.getData();
-                    this.artileId = null;
-                    this.imageUrl = undefined;
-                    this.oldImageUrl = undefined;
-                    this.isImageChanged = undefined;
-                    this.fileImg = undefined;
+               // delete
+              this.afStorage.refFromURL(this.oldImageUrl).delete().subscribe(() => console.log('image deleted'));
+            });
+          }).catch((e) => console.log(e));
+        }
 
-                  });
-
-                   // delete
-                  this.afStorage.refFromURL(this.oldImageUrl).delete().subscribe(() => console.log('image deleted'));
-                });
-              }).catch((e) => console.log(e));
-          }
+        this.db.updateData({...this.form.value, id: this.artileId, publishedAt: new Date().toString()}).subscribe(() => {
+            this.getData();
+            this.artileId = null;
+            this.imageUrl = undefined;
+            this.oldImageUrl = undefined;
+            this.isImageChanged = undefined;
+            this.fileImg = undefined;
+        });
 
       }
     }

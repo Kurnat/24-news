@@ -14,26 +14,17 @@ import { Observable, Subscription } from 'rxjs';
 export class EditNewsComponent implements OnInit {
 
   @Input() article: IArticle;
-  private eventsSubscription: Subscription;
-
   @Input() events: Observable<void>;
-  form: FormGroup;
 
+  private eventsSubscription: Subscription;
+  form: FormGroup;
   categorys: Category[] = [];
-  constructor(
-              private categoryService: CategoryService,
-  ) {
-    // communicationService.changeEmitted$.subscribe(() => {
-    //   console.log(this.article);
-    // });
-   }
+
+  constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
     this.getAllCatogegories();
     this.initFormGroup();
-    // this.eventsSubscription = this.events.subscribe((article) => console.log('doSomething()')
-    // );
-
   }
 
   getAllCatogegories(): void {
