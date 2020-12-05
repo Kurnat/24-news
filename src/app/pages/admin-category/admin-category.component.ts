@@ -1,6 +1,6 @@
 import { CommunicationService } from './../../shared/services/communication.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CategoryService } from './../../shared/services/category.service';
 import { Component, OnInit, TemplateRef, Output, EventEmitter } from '@angular/core';
 import { Category } from 'app/shared/interfaces/category.interface';
@@ -37,15 +37,15 @@ export class AdminCategoryComponent implements OnInit {
   }
 
   openEditCategory(template: TemplateRef<any>, category: Category): void {
-    this.checkModalAdd = false;
-    this.id = category.id;
-    this.form = new FormGroup({
-      nameUA: new FormControl(category.nameUA),
-      nameEN: new FormControl(category.nameEN),
-      color: new FormControl(category.color),
-      bgColor: new FormControl(category.bgColor)
-    });
-    this.modalRef = this.modalService.show(template);
+      this.checkModalAdd = false;
+      this.id = category.id;
+      this.form = new FormGroup({
+        nameUA: new FormControl(category.nameUA, Validators.required),
+        nameEN: new FormControl(category.nameEN, Validators.required),
+        color: new FormControl(category.color),
+        bgColor: new FormControl(category.bgColor)
+      });
+      this.modalRef = this.modalService.show(template);
   }
 
   deletecategory(id: string): void {
@@ -58,25 +58,28 @@ export class AdminCategoryComponent implements OnInit {
   submit(): void {}
 
   editArticleInServer(): void {
-    const categoryData: Category = {
-      id: this.id,
-      ...this.form.value
-    };
+    if (this.form.valid) {
+      const categoryData: Category = {
+        id: this.id,
+        ...this.form.value
+      };
 
-    this.categoryService.updateData(categoryData).subscribe(() => {
-      this.getCategoris();
-      this.communicationService.emitChange();
-    });
+      this.categoryService.updateData(categoryData).subscribe(() => {
+        this.getCategoris();
+        this.communicationService.emitChange();
+      });
 
-    this.modalRef.hide();
+      this.modalRef.hide();
+    }
+
   }
 
   createNewCategory(template: TemplateRef<any>): void {
     this.checkModalAdd = true;
     this.modalRef = this.modalService.show(template);
     this.form = new FormGroup({
-      nameUA: new FormControl(''),
-      nameEN: new FormControl(''),
+      nameUA: new FormControl('', Validators.required),
+      nameEN: new FormControl('', Validators.required),
       color: new FormControl('#000000'),
       bgColor: new FormControl('')
     });
@@ -88,5 +91,13 @@ export class AdminCategoryComponent implements OnInit {
     this.getCategoris();
     this.communicationService.emitChange();
     });
+  }
+
+  makeColorTransparent(): void {
+    this.form.controls.color.setValue('rgba(0, 0, 0, 0)');
+  }
+
+  makeBgTransparent(): void {
+    this.form.controls.bgColor.setValue('rgba(0, 0, 0, 0)');
   }
 }

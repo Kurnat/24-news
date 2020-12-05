@@ -1,17 +1,30 @@
 {
   "news": [
     {
-      "name": "24 News",
-      "author": "Алла Мазур",
-      "title": "Скпер новина",
-      "description": "супер кава",
+      "name": "some",
+      "author": "new post",
+      "title": "Angular 9",
+      "description": "nnn",
       "url": "http://localhost:4200",
-      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-9f457.appspot.com/o/images%2F06a3cc69-0a86-4bef-a507-4c4cf1050e22.jpeg?alt=media&token=63d23e88-5aca-4b11-af99-d327bd2fe610",
-      "publishedAt": "Wed Nov 11 2020 21:12:02 GMT+0200 (Eastern European Standard Time)",
-      "content": "<p>супер смачна</p>",
-      "category": "business",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-9f457.appspot.com/o/images%2Fd2576c2d-168c-40d6-acfa-6f3d6eb604c8.jpeg?alt=media&token=e5629526-cb57-4b56-8178-818612d38616",
+      "publishedAt": "Sat Dec 05 2020 22:41:44 GMT+0200 (Eastern European Standard Time)",
+      "content": "<p>nnnnn</p>",
+      "category": "health",
       "typeNews": "general",
-      "id": 1
+      "id": 5
+    },
+    {
+      "author": "new post",
+      "name": "Vasyl Kurnat",
+      "title": "Angular 9",
+      "category": "business",
+      "urlToImage": "https://firebasestorage.googleapis.com/v0/b/news-9f457.appspot.com/o/images%2F5fc0083e-e51a-47e6-a696-e9b6d3d48002.jpeg?alt=media&token=36fed5e3-8384-4712-9635-3c4bd47c2093",
+      "url": "http://localhost:4200",
+      "content": "<p>sdfsdf</p>",
+      "description": "sfsdf",
+      "typeNews": "general",
+      "id": 6,
+      "publishedAt": "Sat Dec 05 2020 22:48:25 GMT+0200 (Eastern European Standard Time)"
     }
   ],
   "category": [
@@ -19,48 +32,48 @@
       "id": 1,
       "nameUA": "головні",
       "nameEN": "general",
-      "color": "#000",
-      "bgColor": "transparent"
+      "color": "#000000",
+      "bgColor": "rgba(0, 0, 0, 0)"
     },
     {
       "id": 2,
       "nameUA": "бізнес",
       "nameEN": "business",
       "color": "#000",
-      "bgColor": "transparent"
+      "bgColor": "rgba(0, 0, 0, 0)"
     },
     {
       "id": 3,
       "color": "#000",
-      "bgColor": "transparent",
+      "bgColor": "rgba(0, 0, 0, 0)",
       "nameUA": "розваги",
       "nameEN": "entertainment"
     },
     {
       "id": 4,
       "color": "#000",
-      "bgColor": "transparent",
+      "bgColor": "rgba(0, 0, 0, 0)",
       "nameUA": "здоров'я",
       "nameEN": "health"
     },
     {
       "id": 5,
       "color": "#000",
-      "bgColor": "transparent",
+      "bgColor": "rgba(0, 0, 0, 0)",
       "nameUA": "наука",
       "nameEN": "science"
     },
     {
       "id": 6,
       "color": "#000",
-      "bgColor": "transparent",
+      "bgColor": "rgba(0, 0, 0, 0)",
       "nameUA": "спорт",
       "nameEN": "sports"
     },
     {
       "id": 7,
       "color": "#000",
-      "bgColor": "transparent",
+      "bgColor": "rgba(0, 0, 0, 0)",
       "nameUA": "технології",
       "nameEN": "technology"
     },
@@ -68,8 +81,15 @@
       "nameUA": "політика",
       "nameEN": "politics",
       "color": "#000",
-      "bgColor": "transparent",
+      "bgColor": "rgba(0, 0, 0, 0)",
       "id": 8
+    },
+    {
+      "id": 9,
+      "nameUA": "Щось класне",
+      "nameEN": "osome",
+      "color": "#000000",
+      "bgColor": "rgba(0, 0, 0, 0)"
     }
   ],
   "news-second": []

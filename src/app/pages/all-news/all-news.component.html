@@ -44,26 +44,34 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="author">Автор</label>
-          <input type="text" class="form-control" formControlName="author" id="author" placeholder="Автор статті...">
+          <input type="text" class="form-control" formControlName="author" [class.is-invalid]="form.get('author').invalid && form.get('author').touched" id="author" placeholder="Автор статті...">
+          <div class="invalid-feedback">
+            Поле автора обов'язкове
+          </div>
         </div>
         <div class="form-group col-md-6">
           <label for="name">Назва Джерела</label>
-          <input type="text" class="form-control" formControlName="name" id="name" placeholder="24 News...">
+          <input type="text" class="form-control" formControlName="name" [class.is-invalid]="form.get('name').invalid && form.get('name').touched"  id="name" placeholder="24 News...">
+          <div class="invalid-feedback">
+            Поле джерела обов'язкове
+          </div>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-8">
           <label for="title">Заголовок</label>
-          <input type="text" name="title" class="form-control" formControlName="title" id="title"
+          <input type="text" name="title" class="form-control" [class.is-invalid]="form.get('title').invalid && form.get('title').touched" formControlName="title" id="title"
             placeholder="Заголовок статті...">
+            <div class="invalid-feedback">
+              Заголовок є обов'язковим
+            </div>
         </div>
 
         <div class="form-group col-md-4">
           <label for="category">Категорія</label>
           <select id="category" formControlName="category" class="form-control">
-            <option *ngFor="let category of categoris"
-            [value]="category.nameEN">{{category.nameUA | titlecase}}</option>
+            <option *ngFor="let category of categoris" [value]="category.nameEN">{{category.nameUA | titlecase}}</option>
           </select>
         </div>
       </div>

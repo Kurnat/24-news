@@ -39,8 +39,8 @@ export class AddNewsComponent implements OnInit {
 
   initFormGroup(): void {
     this.form = new FormGroup({
-      author: new FormControl('Алла Мазур'),
-      name: new FormControl('24 News'),
+      author: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required),
       title: new FormControl('', Validators.required),
       category: new FormControl('business'),
       urlToImage: new FormControl(''),

@@ -24,6 +24,9 @@ export class AllNewsComponent implements OnInit {
   categoris: Category[];
   uploadProgress: Observable<number>;
   imageUrl: string;
+  oldImageUrl: string;
+  isImageChanged = false;
+  fileImg: File;
 
   constructor(
     private modalService: BsModalService,
@@ -53,18 +56,25 @@ export class AllNewsComponent implements OnInit {
   deleteArticle(id: string) {
     this.db.deleteData(id).subscribe(() => {
       this.getData();
+      this.afStorage.storage
+        .refFromURL(this.form.get('urlToImage').value)
+        .delete()
+        .then((res) => {
+          console.log(res);
+        });
     });
   }
 
   openEditArticle(template: TemplateRef<any>, article: IArticle): void {
     this.imageUrl = article.urlToImage;
-    console.log(article.urlToImage);
 
     this.artileId = article.id;
+    console.log(this.artileId);
+
     this.form = new FormGroup({
-      author: new FormControl(article.author),
-      name: new FormControl(article.name),
-      title: new FormControl(article.title),
+      author: new FormControl(article.author, Validators.required),
+      name: new FormControl(article.name, Validators.required),
+      title: new FormControl(article.title, Validators.required),
       category: new FormControl(article.category),
       urlToImage: new FormControl(article.urlToImage),
       url: new FormControl(article.url),
@@ -80,6 +90,7 @@ export class AllNewsComponent implements OnInit {
     if (this.form.valid) {
       this.editArticleInServer();
       this.modalRef.hide();
+
       const data = {
         publishedAt: new Date().toString(),
         ...this.form.value,
@@ -91,43 +102,81 @@ export class AllNewsComponent implements OnInit {
 
         this.db.setData(data).subscribe(() => {
           this.getData();
+
+          this.fileImg = undefined;
         });
       } else {
         data.id = this.artileId;
-        this.db.updateData(data).subscribe(() => {
-          this.getData();
-        });
-        this.artileId = null;
+
+        this.getData();
+          // if image isn't same
+        console.log(this.oldImageUrl);
+
+        if (this.oldImageUrl) {
+              console.log(1);
+
+              console.log(this.fileImg);
+
+              const filePath = `images/${this.uuid()}.${this.fileImg.type.split('/')[1]}`;
+
+
+              const task = this.afStorage.upload(filePath, this.fileImg);
+              this.uploadProgress = task.percentageChanges();
+              console.log(2);
+
+              // update
+              task.then((e) => {
+                console.log(this.form.value);
+
+                this.afStorage
+                .ref(`images/${e.metadata.name}`)
+                .getDownloadURL()
+                .subscribe((url) => {
+                  this.imageUrl = url;
+                  this.form.get('urlToImage').setValue(url);
+
+                  this.db.updateData({...this.form.value, id: this.artileId, publishedAt: new Date().toString()}).subscribe(() => {
+                    this.getData();
+                    this.artileId = null;
+                    this.imageUrl = undefined;
+                    this.oldImageUrl = undefined;
+                    this.isImageChanged = undefined;
+                    this.fileImg = undefined;
+
+                  });
+
+                   // delete
+                  this.afStorage.refFromURL(this.oldImageUrl).delete().subscribe(() => console.log('image deleted'));
+                });
+              }).catch((e) => console.log(e));
+          }
+
       }
     }
+
   }
 
   addArticleToServer() {
-    console.log('addArticleToServer');
     this.chekerAddOrEdit = true;
   }
 
   editArticleInServer() {
-    console.log('editArticleInServer');
     this.chekerAddOrEdit = false;
   }
 
   uploadFile(event) {
-    const file = event.target.files[0];
-    const filePath = `images/${this.uuid()}.${file.type.split('/')[1]}`;
-    const task = this.afStorage.upload(filePath, file);
-    this.uploadProgress = task.percentageChanges();
-    task.then((e) => {
-      this.afStorage
-        .ref(`images/${e.metadata.name}`)
-        .getDownloadURL()
-        .subscribe((url) => {
-          this.imageUrl = url;
-          console.log(url);
-          this.form.get('urlToImage').setValue(url);
-          console.log(this.form.value);
-        });
-    });
+    this.isImageChanged = true;
+    this.fileImg = event.target.files[0];
+    const reader  = new FileReader();
+
+    reader.onloadend = () => {
+      this.oldImageUrl = this.form.get('urlToImage').value;
+      this.imageUrl = reader.result as string;
+    };
+
+    if (this.fileImg) {
+      reader.readAsDataURL(this.fileImg);
+    }
   }
 
   uuid(): string {

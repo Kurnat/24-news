@@ -2,11 +2,17 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="author">Автор</label>
-      <input type="text" class="form-control" formControlName="author" id="author" placeholder="Автор статті...">
+      <input type="text" class="form-control" formControlName="author" [class.is-invalid]="form.get('author').invalid && form.get('author').touched" id="author" placeholder="Автор статті...">
+      <div class="invalid-feedback">
+        Поле автора обов'язкове
+      </div>
     </div>
     <div class="form-group col-md-6">
       <label for="name">Назва Джерела</label>
-      <input type="text" class="form-control" formControlName="name" id="name" placeholder="24 News...">
+      <input type="text" class="form-control" formControlName="name" [class.is-invalid]="form.get('name').invalid && form.get('name').touched"  id="name" placeholder="24 News...">
+      <div class="invalid-feedback">
+        Поле джерела обов'язкове
+      </div>
     </div>
   </div>
 
@@ -15,6 +21,9 @@
       <label for="title">Заголовок</label>
       <input type="text" name="title" class="form-control" [class.is-invalid]="form.get('title').invalid && form.get('title').touched" formControlName="title" id="title"
         placeholder="Заголовок статті...">
+        <div class="invalid-feedback">
+          Заголовок є обов'язковим
+        </div>
     </div>
 
     <div class="form-group col-md-4">
@@ -93,15 +102,5 @@
     </div>
   </div>
 
-
-
-  <!-- <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div> -->
   <button type="submit" class="btn btn-success" [disabled]="form.invalid">Додати новину</button>
 </form>
