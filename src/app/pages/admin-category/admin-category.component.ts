@@ -75,22 +75,26 @@ export class AdminCategoryComponent implements OnInit {
   }
 
   createNewCategory(template: TemplateRef<any>): void {
-    this.checkModalAdd = true;
-    this.modalRef = this.modalService.show(template);
-    this.form = new FormGroup({
-      nameUA: new FormControl('', Validators.required),
-      nameEN: new FormControl('', Validators.required),
-      color: new FormControl('#000000'),
-      bgColor: new FormControl('')
-    });
+      this.checkModalAdd = true;
+      this.modalRef = this.modalService.show(template);
+      this.form = new FormGroup({
+        nameUA: new FormControl('', Validators.required),
+        nameEN: new FormControl('', Validators.required),
+        color: new FormControl('#000000'),
+        bgColor: new FormControl('')
+      });
   }
 
   addArticleToServer(): void {
+    if (this.form.valid) {
     const newCategory = this.form.value;
+
     this.categoryService.setData(newCategory).subscribe(() => {
     this.getCategoris();
     this.communicationService.emitChange();
     });
+    this.modalRef.hide();
+  }
   }
 
   makeColorTransparent(): void {
