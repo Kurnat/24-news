@@ -19,8 +19,7 @@ export class AuthService {
   signUp(email: string, password: string) {
     console.log('signUp');
 
-    this.afAuth.auth
-      .createUserWithEmailAndPassword(email, password)
+    this.afAuth.createUserWithEmailAndPassword(email, password)
       .then((userResponse) => {
         const user = {
           id: userResponse.user.uid,
@@ -46,8 +45,7 @@ export class AuthService {
   }
 
   signIn(email, password) {
-    return this.afAuth.auth
-      .signInWithEmailAndPassword(email, password)
+    return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((res) => {
         return res;
       })

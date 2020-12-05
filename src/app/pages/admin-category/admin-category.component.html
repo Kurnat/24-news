@@ -59,22 +59,39 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="color">Колір літер</label>
-          <input type="color" name="color" class="form-control" formControlName="color" id="color"
+          <div class="row">
+            <div class="col-8 pr-0">
+              <input type="color" name="color" class="form-control" formControlName="color" id="color"
             placeholder="Заголовок статті...">
+            </div>
+            <div class="col-4 pl-1">
+              <button class="btn btn-outline-secondary" (click)="makeColorTransparent()">No</button>
+            </div>
+          </div>
         </div>
         <div class="form-group col-md-6">
           <label for="bgColor">Колір фону</label>
-          <input type="color" name="bgColor" class="form-control" formControlName="bgColor" id="bgColor"
-            placeholder="Заголовок статті...">
+          <div class="row">
+            <div class="col-8 pr-0">
+              <input type="color" name="bgColor" class="form-control" formControlName="bgColor" id="bgColor"
+              placeholder="Заголовок статті...">
+            </div>
+            <div class="col-4 pl-1">
+              <button class="btn btn-outline-secondary" (click)="makeBgTransparent()">No</button>
+            </div>
+          </div>
+
         </div>
       </div>
 
       <div>
       <button type="submit" class="btn btn-success ml-auto"
+      [disabled]="form.get('nameUA').invalid || form.get('nameEN').invalid"
       *ngIf="checkModalAdd"
       (click)="addArticleToServer()">Додати новину</button>
 
       <button type="submit" class="btn btn-warning ml-auto"
+        [disabled]="form.get('nameUA').invalid || form.get('nameEN').invalid"
         *ngIf="!checkModalAdd"
         (click)="editArticleInServer()">Оновити Категорію</button>
       </div>
